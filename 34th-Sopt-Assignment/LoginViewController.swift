@@ -34,12 +34,12 @@ final class LoginViewController: UIViewController {
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "아이디", attributes: attributes)
-        textField.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(red: 46/255, green: 46/255, blue: 46/255, alpha: 1)
+        textField.backgroundColor = UIColor(resource: .gray4)
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
             textField.leftViewMode = .always
@@ -51,12 +51,12 @@ final class LoginViewController: UIViewController {
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attributes)
-        textField.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(red: 46/255, green: 46/255, blue: 46/255, alpha: 1)
+        textField.backgroundColor = UIColor(resource: .gray4)
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
             textField.leftViewMode = .always
@@ -69,9 +69,9 @@ final class LoginViewController: UIViewController {
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         button.layer.borderWidth = 1
-        button.layer.borderColor = CGColor(red: 46/255, green: 46/255, blue: 46/255, alpha: 1)
+        button.layer.borderColor = UIColor(resource: .gray4).cgColor
         button.setTitle("로그인하기", for: .normal)
-        button.setTitleColor(UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor(resource: .gray2), for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         //button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
@@ -80,7 +80,7 @@ final class LoginViewController: UIViewController {
     private let idFindLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디 찾기"
-        label.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        label.textColor = UIColor(resource: .gray2)
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -90,7 +90,7 @@ final class LoginViewController: UIViewController {
     private let pwFindLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호 찾기"
-        label.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        label.textColor = UIColor(resource: .gray2)
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -102,14 +102,14 @@ final class LoginViewController: UIViewController {
     
     private let lineView: UIView = {
         let line = UIView()
-        line.backgroundColor = UIColor(red: 46/255, green: 46/255, blue: 46/255, alpha: 1)
+        line.backgroundColor = UIColor(resource: .gray4)
         return line
     }()
     
     private let profileMakeLabel: UILabel = {
         let label = UILabel()
         label.text = "아직 계정이 없으신가요?"
-        label.textColor = UIColor(red: 98/255, green: 98/255, blue: 98/255, alpha: 1)
+        label.textColor = UIColor(resource: .gray3)
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -120,7 +120,7 @@ final class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "닉네임 만들러가기"
         label.underLineText(forText: label.text ?? "")
-        label.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        label.textColor = UIColor(resource: .gray2)
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont(name: "Pretendard-Regular", size: 14)
