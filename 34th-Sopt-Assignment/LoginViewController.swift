@@ -113,7 +113,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(UIColor(resource: .gray2), for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        //button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -156,7 +156,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
-    private let nicknameMakeLabel: UILabel = {
+    private lazy var nicknameMakeLabel: UILabel = {
         let label = UILabel()
         label.text = "닉네임 만들러가기"
         label.underLineText(forText: label.text ?? "")
@@ -164,6 +164,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont(name: "Pretendard-Regular", size: 14)
+        
+        let nicknameGesture = UITapGestureRecognizer(target: self, action: #selector(nicknameDidTap))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(nicknameGesture)
         return label
     }()
     
@@ -213,6 +217,30 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc
     func pwClearButtonDidTap(_ sender: UIButton) {
         pwTextField.text = ""
+    }
+    
+    @objc
+    private func loginButtonDidTap(){
+        pushToWelcomeVC()
+    }
+    
+    @objc
+    private func nicknameDidTap(){
+        presentToWelcomeVC()
+    }
+    
+    private func pushToWelcomeVC() { //네비게이션 방식
+        let welcomeViewController = WelcomeViewController()
+        //welcomeViewController.delegate = self
+        //welcomeViewController.id = self.idTextField.text
+        self.navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+    
+    private func presentToWelcomeVC() { //모달 방식
+        let nicknameViewController = NicknameViewController()
+        nicknameViewController.modalPresentationStyle = .formSheet
+        //welcomeViewController.id = idTextField.text
+        self.present(nicknameViewController, animated: true)
     }
     
     private func setLayout() {

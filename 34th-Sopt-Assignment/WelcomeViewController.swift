@@ -6,12 +6,17 @@
 //
 
 import Foundation
-
 import UIKit
 
 import SnapKit
 
+protocol DataBindProtocol: AnyObject {
+    func dataBind(id: String?)
+}
+
 final class WelcomeViewController: UIViewController {
+    
+    weak var delegate: DataBindProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,15 @@ final class WelcomeViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "tiving")
         return imageView
+    }()
+    
+    private let welcomeLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 140, y: 295, width: 95, height: 60))
+        //label.text = "???님\n반가워요!"
+        label.font = UIFont(name: "Pretendard-Bold", size: 23)
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        return label
     }()
     
     private lazy var mainButton: UIButton = {
@@ -39,7 +53,7 @@ final class WelcomeViewController: UIViewController {
     }()
     
     private func setLayout() {
-        [logoImageView, mainButton].forEach { [weak self] view in
+        [logoImageView, welcomeLabel, mainButton].forEach { [weak self] view in
             guard let self else {return}
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
@@ -47,6 +61,10 @@ final class WelcomeViewController: UIViewController {
         logoImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(58)
             $0.leading.trailing.equalToSuperview().offset(0)
+        }
+        welcomeLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(336)
+            $0.centerX.equalToSuperview()
         }
         mainButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
