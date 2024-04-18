@@ -30,7 +30,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var idTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 335, height: 52))
+        let textField = UITextField(frame: .zero)
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
         let attributes = [
@@ -54,7 +54,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var pwTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 335, height: 52))
+        let textField = UITextField(frame: .zero)
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
         let attributes = [
@@ -104,7 +104,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 332, height: 58))
+        let button = UIButton(frame: .zero)
         button.backgroundColor = UIColor.black
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
