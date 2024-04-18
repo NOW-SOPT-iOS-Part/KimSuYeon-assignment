@@ -43,9 +43,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = UIColor(resource: .gray4)
         textField.autocapitalizationType = .none
         textField.delegate = self
-        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
-            textField.leftView = leftPaddingView
-            textField.leftViewMode = .always
+        textField.addPadding(left: 20, right:20)
         return textField
     }()
     
@@ -62,10 +60,23 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = UIColor(resource: .gray4)
         textField.autocapitalizationType = .none
         textField.delegate = self
-        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
-            textField.leftView = leftPaddingView
-            textField.leftViewMode = .always
+        textField.addPadding(left: 20, right: 20)
+        textField.isSecureTextEntry = true
+        
+        let pwButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
+        pwButtonView.addSubview(pwEyeButton)
+        textField.rightView = pwButtonView
+        textField.rightViewMode = .always
+        
         return textField
+    }()
+    
+    private lazy var pwEyeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "hidden-eye"), for: .normal)
+        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        button.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
+        return button
     }()
     
     private lazy var loginButton: UIButton = {
@@ -158,6 +169,16 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             loginButton.setTitleColor(UIColor(resource: .gray2), for: .normal)
         }
         return true
+    }
+
+    @objc
+    func pwEyeButtonDidTap(_ sender: UIButton) {
+        pwTextField.isSecureTextEntry.toggle()
+        if pwTextField.isSecureTextEntry {
+            pwEyeButton.setImage(UIImage(named: "hidden-eye"), for: .normal)
+        } else {
+            pwEyeButton.setImage(UIImage(named: "shown-eye"), for: .normal)
+        }
     }
     
     private func setLayout() {

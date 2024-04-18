@@ -27,6 +27,7 @@
 		A3B375622BD049A300AA87E5 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B375592BD049A300AA87E5 /* Pretendard-Regular.otf */; };
 		A3B375632BD049A300AA87E5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B3755A2BD049A300AA87E5 /* Pretendard-SemiBold.otf */; };
 		A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375652BD068BD00AA87E5 /* UILabel+.swift */; };
+		A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375672BD156E600AA87E5 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A3B375592BD049A300AA87E5 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		A3B3755A2BD049A300AA87E5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		A3B375652BD068BD00AA87E5 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		A3B375672BD156E600AA87E5 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B375652BD068BD00AA87E5 /* UILabel+.swift */,
+				A3B375672BD156E600AA87E5 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */,
 				A3B3752B2BD0212200AA87E5 /* LoginViewController.swift in Sources */,
+				A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */,
 				A3B3752D2BD0213E00AA87E5 /* WelcomeViewController.swift in Sources */,
 				A3B3751B2BD01C1300AA87E5 /* ViewController.swift in Sources */,
 				A3B375172BD01C1300AA87E5 /* AppDelegate.swift in Sources */,
