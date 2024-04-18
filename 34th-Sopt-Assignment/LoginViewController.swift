@@ -10,7 +10,7 @@ import UIKit
 
 import SnapKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ final class LoginViewController: UIViewController {
         return label
     }()
     
-    private let idTextField: UITextField = {
+    private lazy var idTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 335, height: 52))
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
@@ -37,16 +37,18 @@ final class LoginViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "아이디", attributes: attributes)
+        textField.layer.borderColor = UIColor(resource: .gray4).cgColor
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.delegate = self
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
             textField.leftViewMode = .always
         return textField
     }()
     
-    private let pwTextField: UITextField = {
+    private lazy var pwTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 335, height: 52))
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
@@ -57,6 +59,7 @@ final class LoginViewController: UIViewController {
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.delegate = self
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
             textField.leftViewMode = .always
@@ -126,6 +129,15 @@ final class LoginViewController: UIViewController {
         label.font = UIFont(name: "Pretendard-Regular", size: 14)
         return label
     }()
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(resource: .gray2).cgColor
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
     
     private func setLayout() {
         [titleLabel, idTextField, pwTextField, loginButton, idFindLabel, pwFindLabel, lineView, profileMakeLabel, nicknameMakeLabel].forEach { [weak self] view in
