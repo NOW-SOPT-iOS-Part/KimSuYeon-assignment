@@ -41,6 +41,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.keyboardType = .asciiCapable
         textField.autocapitalizationType = .none
         textField.delegate = self
         textField.addPadding(left: 20, right:20)
@@ -58,12 +59,14 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.keyboardType = .asciiCapable
         textField.autocapitalizationType = .none
         textField.delegate = self
         textField.addPadding(left: 20, right: 20)
         textField.isSecureTextEntry = true
         
-        let pwButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
+        let pwButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 76, height: 20))
+        pwButtonView.addSubview(pwClearButton)
         pwButtonView.addSubview(pwEyeButton)
         textField.rightView = pwButtonView
         textField.rightViewMode = .always
@@ -71,16 +74,24 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         return textField
     }()
     
+    private lazy var pwClearButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "x-circle"), for: .normal)
+        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        button.addTarget(self, action: #selector(pwClearButtonDidTap), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var pwEyeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "hidden-eye"), for: .normal)
-        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        button.frame = CGRect(x: 36, y:0, width: 20, height: 20)
         button.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
         return button
     }()
     
     private lazy var loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 21, y: 422, width: 332, height: 58))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 332, height: 58))
         button.backgroundColor = UIColor.black
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
@@ -179,6 +190,11 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             pwEyeButton.setImage(UIImage(named: "shown-eye"), for: .normal)
         }
+    }
+    
+    @objc
+    func pwClearButtonDidTap(_ sender: UIButton) {
+        pwTextField.text = ""
     }
     
     private func setLayout() {
