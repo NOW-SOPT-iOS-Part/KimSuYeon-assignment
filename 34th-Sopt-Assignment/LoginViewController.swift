@@ -41,6 +41,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.autocapitalizationType = .none
         textField.delegate = self
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
@@ -59,6 +60,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.textColor = UIColor(resource: .gray2)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray4)
+        textField.autocapitalizationType = .none
         textField.delegate = self
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
             textField.leftView = leftPaddingView
@@ -137,6 +139,25 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 0
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let idText = idTextField.text ?? ""
+        let pwText = pwTextField.text ?? ""
+        
+        if !idText.isEmpty && !pwText.isEmpty {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.red1
+            loginButton.layer.borderWidth = 0
+            loginButton.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = UIColor.black
+            loginButton.layer.borderWidth = 1
+            loginButton.layer.borderColor = UIColor(resource: .gray4).cgColor
+            loginButton.setTitleColor(UIColor(resource: .gray2), for: .normal)
+        }
+        return true
     }
     
     private func setLayout() {
