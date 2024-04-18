@@ -15,9 +15,35 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        self.view.backgroundColor = .white
+        setHierarchy()
         setLayout()
     }
+    
+    private func setHierarchy() {
+        self.view.addSubview(dimmedView)
+        self.view.addSubview(bottomSheetView)
+        bottomSheetView.addSubview(titleLabel)
+        bottomSheetView.addSubview(nicknameTextField)
+        bottomSheetView.addSubview(saveButton)
+    }
+    
+    private lazy var dimmedView: UIView = {
+        let view = UIView()
+        view.alpha = 0.7
+        view.layer.backgroundColor = UIColor.black.cgColor
+        
+        let dimmedGesture = UITapGestureRecognizer(target: self, action: #selector(dimmedDidTap))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(dimmedGesture)
+        return view
+    }()
+    
+    private let bottomSheetView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        return view
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -72,11 +98,19 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @objc
+    func dimmedDidTap(sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true)
+    }
+    
     private func setLayout() {
-        [titleLabel, nicknameTextField, saveButton].forEach { [weak self] view in
-            guard let self else {return}
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(view)
+        dimmedView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(bottomSheetView.snp.top)
+        }
+        bottomSheetView.snp.makeConstraints {
+            $0.height.equalTo(UIScreen.main.bounds.size.height / 2)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(50)
