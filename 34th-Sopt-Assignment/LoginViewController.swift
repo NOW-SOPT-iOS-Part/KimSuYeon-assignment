@@ -45,6 +45,11 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.autocapitalizationType = .none
         textField.delegate = self
         textField.addPadding(left: 20, right:20)
+        
+        let idButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
+        idButtonView.addSubview(idClearButton)
+        textField.rightView = idButtonView
+        textField.rightViewMode = .always
         return textField
     }()
     
@@ -72,6 +77,14 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.rightViewMode = .always
         
         return textField
+    }()
+    
+    private lazy var idClearButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "x-circle"), for: .normal)
+        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        button.addTarget(self, action: #selector(idClearButtonDidTap), for: .touchUpInside)
+        return button
     }()
     
     private lazy var pwClearButton: UIButton = {
@@ -190,6 +203,11 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             pwEyeButton.setImage(UIImage(named: "shown-eye"), for: .normal)
         }
+    }
+    
+    @objc
+    func idClearButtonDidTap(_ sender: UIButton) {
+        idTextField.text = ""
     }
     
     @objc
