@@ -69,11 +69,8 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func setLayout() {
-        [logoImageView, welcomeLabel, mainButton].forEach { [weak self] view in
-            guard let self else {return}
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(view)
-        }
+        self.view.addSubviews(logoImageView, welcomeLabel, mainButton)
+        
         logoImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(58)
             $0.leading.trailing.equalToSuperview().offset(0)

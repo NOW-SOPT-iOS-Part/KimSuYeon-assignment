@@ -245,11 +245,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setLayout() {
-        [titleLabel, idTextField, pwTextField, loginButton, idFindLabel, pwFindLabel, lineView, profileMakeLabel, nicknameMakeLabel].forEach { [weak self] view in
-            guard let self else {return}
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(view)
-        }
+        self.view.addSubviews(titleLabel, idTextField, pwTextField, loginButton, idFindLabel, pwFindLabel, lineView, profileMakeLabel, nicknameMakeLabel)
+        
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(90)
             $0.centerX.equalToSuperview()
