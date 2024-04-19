@@ -24,6 +24,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(bottomSheetView)
         bottomSheetView.addSubview(titleLabel)
         bottomSheetView.addSubview(nicknameTextField)
+        bottomSheetView.addSubview(koreanOnlyLabel)
         bottomSheetView.addSubview(saveButton)
     }
     
@@ -47,7 +48,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "닉네임을 입력해주세요"
+        label.text = "닉네임을 만들어주세요."
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -66,16 +67,25 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         textField.textColor = UIColor(resource: .gray4)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = UIColor(resource: .gray2)
-        textField.keyboardType = .asciiCapable
-        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.addPadding(left: 20, right:20)
         return textField
     }()
     
+    private lazy var koreanOnlyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "닉네임은 한글만 설정할 수 있습니다."
+        label.textColor = .red1
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.font = UIFont(name: "Pretendard-Medium", size: 14)
+        label.isHidden = true
+        return label
+    }()
+    
     private lazy var saveButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.backgroundColor = UIColor(resource: .gray4)
+        button.backgroundColor = UIColor(resource: .gray2)
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         button.setTitle("저장하기", for: .normal)
@@ -87,7 +97,11 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let nicknameText = nicknameTextField.text ?? ""
-        
+        let isValid = nicknameText.range(of: "^[가-힣]{1,10}$", options: .regularExpression) != nil
+        saveButton.isEnabled = isValid
+        saveButton.backgroundColor = isValid ? UIColor(resource: .red1) : UIColor(resource: .gray2)
+        koreanOnlyLabel.isHidden = isValid ? true : false
+        /*
         if !nicknameText.isEmpty {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor.red1
@@ -95,6 +109,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
             saveButton.isEnabled = false
             saveButton.backgroundColor = UIColor(resource: .gray4)
         }
+        */
         return true
     }
     
@@ -121,6 +136,10 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(52)
+        }
+        koreanOnlyLabel.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(20)
         }
         saveButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
