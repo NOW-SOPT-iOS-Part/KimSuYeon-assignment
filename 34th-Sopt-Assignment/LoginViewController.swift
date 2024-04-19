@@ -227,7 +227,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc
     private func nicknameDidTap(){
-        presentToWelcomeVC()
+        presentToNicknameVC()
     }
     
     private func pushToWelcomeVC() { //네비게이션 방식
@@ -237,7 +237,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
     
-    private func presentToWelcomeVC() { //모달 방식
+    private func presentToNicknameVC() { //모달 방식
         let nicknameViewController = NicknameViewController()
         nicknameViewController.modalPresentationStyle = .formSheet
         //welcomeViewController.id = idTextField.text
