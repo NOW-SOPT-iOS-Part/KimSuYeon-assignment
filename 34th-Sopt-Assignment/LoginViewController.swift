@@ -113,6 +113,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(UIColor(resource: .gray2), for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        button.isEnabled = false
         button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
