@@ -19,4 +19,9 @@ extension UITextField {
             rightViewMode = .always
         }
     }
+    
+    //placeholder 세팅 커스텀
+    func setPlaceholder(placeholder: String, fontColor: UIColor?) {
+        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: fontColor!])
+    }
 }

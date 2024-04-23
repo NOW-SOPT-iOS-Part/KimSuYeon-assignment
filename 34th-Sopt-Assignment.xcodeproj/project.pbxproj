@@ -30,6 +30,7 @@
 		A3B375632BD049A300AA87E5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B3755A2BD049A300AA87E5 /* Pretendard-SemiBold.otf */; };
 		A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375652BD068BD00AA87E5 /* UILabel+.swift */; };
 		A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375672BD156E600AA87E5 /* UITextField+.swift */; };
+		A3CDA1CE2BD8204000851A0F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3CDA1CD2BD8204000851A0F /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3B375302BD023D500AA87E5 /* SnapKit in Frameworks */,
+				A3CDA1CE2BD8204000851A0F /* Then in Frameworks */,
 				A3B375322BD023D500AA87E5 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +153,7 @@
 			packageProductDependencies = (
 				A3B3752F2BD023D500AA87E5 /* SnapKit */,
 				A3B375312BD023D500AA87E5 /* SnapKit-Dynamic */,
+				A3CDA1CD2BD8204000851A0F /* Then */,
 			);
 			productName = "34th-Sopt-Assignment";
 			productReference = A3B375132BD01C1300AA87E5 /* 34th-Sopt-Assignment.app */;
@@ -182,6 +185,7 @@
 			mainGroup = A3B3750A2BD01C1300AA87E5;
 			packageReferences = (
 				A3B3752E2BD023D500AA87E5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A3CDA1CC2BD8204000851A0F /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = A3B375142BD01C1300AA87E5 /* Products */;
 			projectDirPath = "";
@@ -460,6 +464,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		A3CDA1CC2BD8204000851A0F /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -472,6 +484,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3B3752E2BD023D500AA87E5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		A3CDA1CD2BD8204000851A0F /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3CDA1CC2BD8204000851A0F /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

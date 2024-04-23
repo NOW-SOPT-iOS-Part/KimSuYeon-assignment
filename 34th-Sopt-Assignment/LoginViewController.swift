@@ -5,10 +5,9 @@
 //  Created by 예삐 on 4/18/24.
 //
 
-import Foundation
 import UIKit
-
 import SnapKit
+import Then
 
 final class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -19,155 +18,129 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         setLayout()
     }
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "TIVING ID 로그인"
-        label.textColor = .white
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        label.font = UIFont(name: "Pretendard-Medium", size: 23)
-        return label
-    }()
+    private let titleLabel = UILabel().then {
+        $0.text = "TIVING ID 로그인"
+        $0.textColor = .white
+        $0.textAlignment = .center
+        $0.numberOfLines = 2
+        $0.font = UIFont(name: "Pretendard-Medium", size: 23)
+    }
     
-    private lazy var idTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.layer.cornerRadius = 3
-        textField.layer.masksToBounds = true
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(string: "아이디", attributes: attributes)
-        textField.layer.borderColor = UIColor(resource: .gray4).cgColor
-        textField.textColor = UIColor(resource: .gray2)
-        textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(resource: .gray4)
-        textField.keyboardType = .asciiCapable
-        textField.autocapitalizationType = .none
-        textField.delegate = self
-        textField.addPadding(left: 20, right:20)
+    private lazy var idTextField = UITextField().then {
+        $0.layer.cornerRadius = 3
+        $0.addPadding(left: 20, right:20)
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(resource: .gray4)
+        
+        $0.setPlaceholder(placeholder: "아이디", fontColor: UIColor(resource: .gray2))
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+        $0.textColor = UIColor(resource: .gray2)
+        
+        $0.keyboardType = .asciiCapable
+        $0.autocapitalizationType = .none
+        $0.delegate = self
         
         let idButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
         idButtonView.addSubview(idClearButton)
-        textField.rightView = idButtonView
-        textField.rightViewMode = .always
-        return textField
-    }()
+        $0.rightView = idButtonView
+        $0.rightViewMode = .always
+    }
     
-    private lazy var pwTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.layer.cornerRadius = 3
-        textField.layer.masksToBounds = true
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attributes)
-        textField.textColor = UIColor(resource: .gray2)
-        textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(resource: .gray4)
-        textField.keyboardType = .asciiCapable
-        textField.autocapitalizationType = .none
-        textField.delegate = self
-        textField.addPadding(left: 20, right: 20)
-        textField.isSecureTextEntry = true
+    private lazy var pwTextField = UITextField().then {
+        $0.layer.cornerRadius = 3
+        $0.addPadding(left: 20, right: 20)
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(resource: .gray4)
+        
+        $0.setPlaceholder(placeholder: "비밀번호", fontColor: UIColor(resource: .gray2))
+        $0.textColor = UIColor(resource: .gray2)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    
+        $0.keyboardType = .asciiCapable
+        $0.autocapitalizationType = .none
+        $0.delegate = self
+        $0.isSecureTextEntry = true
         
         let pwButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 76, height: 20))
         pwButtonView.addSubview(pwClearButton)
         pwButtonView.addSubview(pwEyeButton)
-        textField.rightView = pwButtonView
-        textField.rightViewMode = .always
+        $0.rightView = pwButtonView
+        $0.rightViewMode = .always
+    }
+    
+    private lazy var idClearButton = UIButton().then {
+        $0.setImage(UIImage(named: "x-circle"), for: .normal)
+        $0.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        $0.addTarget(self, action: #selector(idClearButtonDidTap), for: .touchUpInside)
+    }
+    
+    private lazy var pwClearButton = UIButton().then {
+        $0.setImage(UIImage(named: "x-circle"), for: .normal)
+        $0.frame = CGRect(x: 0, y:0, width: 20, height: 20)
+        $0.addTarget(self, action: #selector(pwClearButtonDidTap), for: .touchUpInside)
+    }
+    
+    private lazy var pwEyeButton = UIButton().then {
+        $0.setImage(UIImage(named: "hidden-eye"), for: .normal)
+        $0.frame = CGRect(x: 36, y:0, width: 20, height: 20)
+        $0.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
+    }
+    
+    private lazy var loginButton = UIButton().then {
+        $0.backgroundColor = UIColor.black
+        $0.layer.cornerRadius = 3
+        $0.layer.masksToBounds = true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(resource: .gray4).cgColor
         
-        return textField
-    }()
+        $0.setTitle("로그인하기", for: .normal)
+        $0.setTitleColor(UIColor(resource: .gray2), for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        
+        $0.isEnabled = false
+        $0.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
     
-    private lazy var idClearButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "x-circle"), for: .normal)
-        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
-        button.addTarget(self, action: #selector(idClearButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private let idFindLabel = UILabel().then {
+        $0.text = "아이디 찾기"
+        $0.textColor = UIColor(resource: .gray2)
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+    }
     
-    private lazy var pwClearButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "x-circle"), for: .normal)
-        button.frame = CGRect(x: 0, y:0, width: 20, height: 20)
-        button.addTarget(self, action: #selector(pwClearButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private let pwFindLabel = UILabel().then {
+        $0.text = "비밀번호 찾기"
+        $0.textColor = UIColor(resource: .gray2)
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+    }
     
-    private lazy var pwEyeButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "hidden-eye"), for: .normal)
-        button.frame = CGRect(x: 36, y:0, width: 20, height: 20)
-        button.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private let lineView = UIView().then {
+        $0.backgroundColor = UIColor(resource: .gray4)
+    }
     
-    private lazy var loginButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.backgroundColor = UIColor.black
-        button.layer.cornerRadius = 3
-        button.layer.masksToBounds = true
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(resource: .gray4).cgColor
-        button.setTitle("로그인하기", for: .normal)
-        button.setTitleColor(UIColor(resource: .gray2), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        button.isEnabled = false
-        button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private let profileMakeLabel = UILabel().then {
+        $0.text = "아직 계정이 없으신가요?"
+        $0.textColor = UIColor(resource: .gray3)
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+    }
     
-    private let idFindLabel: UILabel = {
-        let label = UILabel()
-        label.text = "아이디 찾기"
-        label.textColor = UIColor(resource: .gray2)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        return label
-    }()
-    
-    private let pwFindLabel: UILabel = {
-        let label = UILabel()
-        label.text = "비밀번호 찾기"
-        label.textColor = UIColor(resource: .gray2)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        return label
-    }()
-    
-    private let lineView: UIView = {
-        let line = UIView()
-        line.backgroundColor = UIColor(resource: .gray4)
-        return line
-    }()
-    
-    private let profileMakeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "아직 계정이 없으신가요?"
-        label.textColor = UIColor(resource: .gray3)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        return label
-    }()
-    
-    private lazy var nicknameMakeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "닉네임 만들러가기"
-        label.underLineText(forText: label.text ?? "")
-        label.textColor = UIColor(resource: .gray2)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont(name: "Pretendard-Regular", size: 14)
+    private lazy var nicknameMakeLabel = UILabel().then {
+        $0.text = "닉네임 만들러가기"
+        $0.underLineText(forText: $0.text ?? "")
+        $0.textColor = UIColor(resource: .gray2)
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
         
         let nicknameGesture = UITapGestureRecognizer(target: self, action: #selector(nicknameDidTap))
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(nicknameGesture)
-        return label
-    }()
+        $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(nicknameGesture)
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 1
@@ -195,6 +168,19 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             loginButton.setTitleColor(UIColor(resource: .gray2), for: .normal)
         }
         return true
+    }
+    
+    private func pushToWelcomeVC() { //네비게이션 방식
+        let welcomeViewController = WelcomeViewController()
+        //welcomeViewController.delegate = self
+        welcomeViewController.id = self.idTextField.text
+        self.navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+    
+    private func presentToNicknameVC() { //모달 방식
+        let nicknameViewController = NicknameViewController()
+        nicknameViewController.modalPresentationStyle = .formSheet
+        self.present(nicknameViewController, animated: true)
     }
 
     @objc
@@ -225,20 +211,6 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc
     private func nicknameDidTap(){
         presentToNicknameVC()
-    }
-    
-    private func pushToWelcomeVC() { //네비게이션 방식
-        let welcomeViewController = WelcomeViewController()
-        //welcomeViewController.delegate = self
-        welcomeViewController.id = self.idTextField.text
-        self.navigationController?.pushViewController(welcomeViewController, animated: true)
-    }
-    
-    private func presentToNicknameVC() { //모달 방식
-        let nicknameViewController = NicknameViewController()
-        nicknameViewController.modalPresentationStyle = .formSheet
-        //welcomeViewController.id = idTextField.text
-        self.present(nicknameViewController, animated: true)
     }
     
     private func setLayout() {
