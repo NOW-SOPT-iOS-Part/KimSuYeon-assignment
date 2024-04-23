@@ -5,20 +5,11 @@
 //  Created by 예삐 on 4/18/24.
 //
 
-import Foundation
 import UIKit
-
 import SnapKit
-
-/*
-protocol DataBindProtocol: AnyObject {
-    func dataBind(id: String?)
-}
-*/
+import Then
 
 final class WelcomeViewController: UIViewController {
-    
-    //weak var delegate: DataBindProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,33 +21,26 @@ final class WelcomeViewController: UIViewController {
         bindID()
     }
     
-    private let logoImageView: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "tiving")
-        return imageView
-    }()
+    private let logoImageView = UIImageView().then {
+        $0.image = UIImage(named: "tiving")
+    }
     
-    private let welcomeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 140, y: 295, width: 95, height: 60))
-        //label.text = "???님\n반가워요!"
-        label.textColor = .white
-        label.font = UIFont(name: "Pretendard-Bold", size: 23)
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        return label
-    }()
+    private let welcomeLabel = UILabel().then {
+        $0.textColor = .white
+        $0.font = UIFont(name: "Pretendard-Bold", size: 23)
+        $0.textAlignment = .center
+        $0.numberOfLines = 2
+    }
     
-    private lazy var mainButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.backgroundColor = UIColor(resource: .red1)
-        button.layer.cornerRadius = 3
-        button.layer.masksToBounds = true
-        button.setTitle("메인으로", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        //button.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private lazy var mainButton = UIButton().then {
+        $0.backgroundColor = UIColor(resource: .red1)
+        $0.layer.cornerRadius = 3
+        $0.layer.masksToBounds = true
+        $0.setTitle("메인으로", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        //$0.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
+    }
     
     var id: String?
 

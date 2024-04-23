@@ -5,10 +5,9 @@
 //  Created by 예삐 on 4/19/24.
 //
 
-import Foundation
 import UIKit
-
 import SnapKit
+import Then
 
 final class NicknameViewController: UIViewController, UITextFieldDelegate {
     
@@ -28,89 +27,78 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         bottomSheetView.addSubview(saveButton)
     }
     
-    private lazy var dimmedView: UIView = {
-        let view = UIView()
-        view.alpha = 0.7
-        view.layer.backgroundColor = UIColor.black.cgColor
+    private lazy var dimmedView = UIView().then {
+        $0.alpha = 0.7
+        $0.layer.backgroundColor = UIColor.black.cgColor
         
         let dimmedGesture = UITapGestureRecognizer(target: self, action: #selector(dimmedDidTap))
-        view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(dimmedGesture)
-        return view
-    }()
+        $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(dimmedGesture)
+    }
     
-    private let bottomSheetView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
-        return view
-    }()
+    private let bottomSheetView = UIView().then {
+        $0.backgroundColor = UIColor.white
+        $0.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+    }
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "닉네임을 만들어주세요."
-        label.textColor = .black
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        label.font = UIFont(name: "Pretendard-Medium", size: 23)
-        return label
-    }()
+    private let titleLabel = UILabel().then {
+        $0.text = "닉네임을 만들어주세요."
+        $0.textColor = .black
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-Medium", size: 23)
+    }
     
-    private lazy var nicknameTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.layer.cornerRadius = 3
-        textField.layer.masksToBounds = true
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(string: "한글로 입력", attributes: attributes)
-        textField.textColor = UIColor(resource: .gray4)
-        textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(resource: .gray1)
-        textField.delegate = self
-        textField.addPadding(left: 20, right:20)
-        return textField
-    }()
+    private lazy var nicknameTextField = UITextField().then {
+        $0.layer.cornerRadius = 3
+        $0.addPadding(left: 20, right:20)
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(resource: .gray1)
+        
+        $0.setPlaceholder(placeholder: "한글로 입력", fontColor: UIColor(resource: .gray2))
+        $0.textColor = UIColor(resource: .gray4)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+        
+        $0.delegate = self
+        $0.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
+    }
     
-    private lazy var koreanOnlyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "닉네임은 한글만 설정할 수 있습니다."
-        label.textColor = .red1
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont(name: "Pretendard-Medium", size: 14)
-        label.isHidden = true
-        return label
-    }()
+    private lazy var koreanOnlyLabel = UILabel().then {
+        $0.text = "올바른 닉네임을 입력해주세요."
+        $0.textColor = .red1
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-Medium", size: 14)
+        $0.isHidden = true
+    }
     
-    private lazy var saveButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.backgroundColor = UIColor(resource: .gray2)
-        button.layer.cornerRadius = 3
-        button.layer.masksToBounds = true
-        button.setTitle("저장하기", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        //button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private lazy var saveButton = UIButton().then {
+        $0.backgroundColor = UIColor(resource: .gray2)
+        $0.layer.cornerRadius = 3
+        $0.layer.masksToBounds = true
+        $0.setTitle("저장하기", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        //$0.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let nicknameText = nicknameTextField.text ?? ""
-        let isValid = nicknameText.range(of: "^[가-힣]{1,10}$", options: .regularExpression) != nil
-        saveButton.isEnabled = isValid
-        saveButton.backgroundColor = isValid ? UIColor(resource: .red1) : UIColor(resource: .gray2)
-        koreanOnlyLabel.isHidden = isValid ? true : false
-        /*
-        if !nicknameText.isEmpty {
-            saveButton.isEnabled = true
-            saveButton.backgroundColor = UIColor.red1
+
+    func setSaveButton(nickname: String, isEnabled: Bool) {
+        if isEnabled {
+            let isValid = nickname.range(of: "^[ㄱ-ㅎㅏ-ㅣ가-힣]*$", options: .regularExpression) != nil
+            saveButton.backgroundColor = isValid ? UIColor(resource: .red1) : UIColor(resource: .gray2)
+            koreanOnlyLabel.isHidden = isValid ? true : false
         } else {
-            saveButton.isEnabled = false
-            saveButton.backgroundColor = UIColor(resource: .gray4)
+            saveButton.backgroundColor = UIColor(resource: .gray2)
+            koreanOnlyLabel.isHidden = true
         }
-        */
-        return true
+    }
+    
+    @objc
+    func textFieldChange() {
+        let nickname = nicknameTextField.text ?? ""
+        setSaveButton(nickname: nickname, isEnabled: !nickname.isEmpty)
+
     }
     
     @objc
