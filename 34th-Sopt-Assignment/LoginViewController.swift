@@ -138,9 +138,6 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
-    let lineWidth: CGFloat = 1
-    let lineHeight: CGFloat = 12
-    
     private let lineView: UIView = {
         let line = UIView()
         line.backgroundColor = UIColor(resource: .gray4)
@@ -253,43 +250,40 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         idTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(158)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
         pwTextField.snp.makeConstraints {
             $0.top.equalTo(idTextField.snp.bottom).offset(7)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
         loginButton.snp.makeConstraints {
             $0.top.equalTo(pwTextField.snp.bottom).offset(21)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
         idFindLabel.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(31)
-            $0.leading.equalToSuperview().offset(85)
+            $0.leading.equalToSuperview().inset(85)
         }
         pwFindLabel.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(31)
-            $0.trailing.equalToSuperview().offset(-85)
+            $0.trailing.equalToSuperview().inset(85)
         }
         lineView.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(31)
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(lineHeight)
-            $0.width.equalTo(lineWidth)
+            $0.height.equalTo(1)
+            $0.width.equalTo(12)
         }
         profileMakeLabel.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(81)
-            $0.leading.equalToSuperview().offset(51)
+            $0.leading.equalToSuperview().inset(51)
         }
         nicknameMakeLabel.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(81)
-            $0.trailing.equalToSuperview().offset(-62)
+            $0.trailing.equalToSuperview().inset(62)
         }
     }
 }

@@ -61,12 +61,12 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         textField.layer.cornerRadius = 3
         textField.layer.masksToBounds = true
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray4)
+            NSAttributedString.Key.foregroundColor: UIColor(resource: .gray2)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: "닉네임", attributes: attributes)
+        textField.attributedPlaceholder = NSAttributedString(string: "한글로 입력", attributes: attributes)
         textField.textColor = UIColor(resource: .gray4)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = UIColor(resource: .gray2)
+        textField.backgroundColor = UIColor(resource: .gray1)
         textField.delegate = self
         textField.addPadding(left: 20, right:20)
         return textField
@@ -129,22 +129,20 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(50)
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().inset(20)
         }
         nicknameTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(93)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
         koreanOnlyLabel.snp.makeConstraints {
             $0.top.equalTo(nicknameTextField.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().inset(20)
         }
         saveButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
     }

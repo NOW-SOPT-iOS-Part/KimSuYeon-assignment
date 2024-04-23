@@ -74,7 +74,7 @@ final class WelcomeViewController: UIViewController {
         
         logoImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(58)
-            $0.leading.trailing.equalToSuperview().offset(0)
+            $0.leading.trailing.equalToSuperview()
         }
         welcomeLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(336)
@@ -82,8 +82,7 @@ final class WelcomeViewController: UIViewController {
         }
         mainButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
     }
