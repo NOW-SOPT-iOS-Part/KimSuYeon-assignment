@@ -39,6 +39,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.keyboardType = .asciiCapable
         $0.autocapitalizationType = .none
         $0.delegate = self
+        $0.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
         
         let idButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
         idButtonView.addSubview(idClearButton)
@@ -56,10 +57,11 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.textColor = UIColor(resource: .gray2)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     
+        $0.isSecureTextEntry = true
         $0.keyboardType = .asciiCapable
         $0.autocapitalizationType = .none
         $0.delegate = self
-        $0.isSecureTextEntry = true
+        $0.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
         
         let pwButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 76, height: 20))
         pwButtonView.addSubview(pwClearButton)
@@ -142,6 +144,18 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.addGestureRecognizer(nicknameGesture)
     }
     
+    private func pushToWelcomeVC() { //네비게이션 방식
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.id = self.idTextField.text
+        self.navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+    
+    private func presentToNicknameVC() { //모달 방식
+        let nicknameViewController = NicknameViewController()
+        nicknameViewController.modalPresentationStyle = .formSheet
+        self.present(nicknameViewController, animated: true)
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(resource: .gray2).cgColor
@@ -151,11 +165,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.layer.borderWidth = 0
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let idText = idTextField.text ?? ""
-        let pwText = pwTextField.text ?? ""
-        
-        if !idText.isEmpty && !pwText.isEmpty {
+    func setLoginButton(isEnabled: Bool) {
+        if isEnabled {
             loginButton.isEnabled = true
             loginButton.backgroundColor = UIColor.red1
             loginButton.layer.borderWidth = 0
@@ -167,20 +178,13 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             loginButton.layer.borderColor = UIColor(resource: .gray4).cgColor
             loginButton.setTitleColor(UIColor(resource: .gray2), for: .normal)
         }
-        return true
     }
     
-    private func pushToWelcomeVC() { //네비게이션 방식
-        let welcomeViewController = WelcomeViewController()
-        //welcomeViewController.delegate = self
-        welcomeViewController.id = self.idTextField.text
-        self.navigationController?.pushViewController(welcomeViewController, animated: true)
-    }
-    
-    private func presentToNicknameVC() { //모달 방식
-        let nicknameViewController = NicknameViewController()
-        nicknameViewController.modalPresentationStyle = .formSheet
-        self.present(nicknameViewController, animated: true)
+    @objc
+    func textFieldChange() {
+        let id = self.idTextField.text ?? ""
+        let pw = self.pwTextField.text ?? ""
+        setLoginButton(isEnabled: !id.isEmpty && !pw.isEmpty)
     }
 
     @objc
