@@ -24,6 +24,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
                 
         self.view.backgroundColor = .black
+        navigationItem.hidesBackButton = true
         setLayout()
         
         bindID()
