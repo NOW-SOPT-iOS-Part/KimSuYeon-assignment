@@ -92,14 +92,9 @@
 		A3B375152BD01C1300AA87E5 /* 34th-Sopt-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				A3CDA1D22BD8E04E00851A0F /* App */,
+				A3CDA1D12BD8E01D00851A0F /* Resource */,
 				A3B375642BD068A900AA87E5 /* Extension */,
-				A3B375332BD0487400AA87E5 /* Fonts */,
-				A3B375162BD01C1300AA87E5 /* AppDelegate.swift */,
-				A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */,
-				A3B3751A2BD01C1300AA87E5 /* ViewController.swift */,
-				A3B3751C2BD01C1300AA87E5 /* Main.storyboard */,
-				A3B3751F2BD01C1600AA87E5 /* Assets.xcassets */,
-				A3B375212BD01C1600AA87E5 /* LaunchScreen.storyboard */,
 				A3B375242BD01C1600AA87E5 /* Info.plist */,
 				A3B3752A2BD0212200AA87E5 /* LoginViewController.swift */,
 				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController.swift */,
@@ -132,6 +127,27 @@
 				A317C5B32BD1C8F500FBCC33 /* UIView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A3CDA1D12BD8E01D00851A0F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A3B375332BD0487400AA87E5 /* Fonts */,
+				A3B3751F2BD01C1600AA87E5 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A3CDA1D22BD8E04E00851A0F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A3B375162BD01C1300AA87E5 /* AppDelegate.swift */,
+				A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */,
+				A3B3751A2BD01C1300AA87E5 /* ViewController.swift */,
+				A3B3751C2BD01C1300AA87E5 /* Main.storyboard */,
+				A3B375212BD01C1600AA87E5 /* LaunchScreen.storyboard */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
