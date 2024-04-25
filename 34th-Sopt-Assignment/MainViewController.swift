@@ -18,6 +18,7 @@ final class MainViewController : UIViewController {
         super.viewDidLoad()
                 
         self.view.backgroundColor = .black
+        setHierarchy()
         setLayout()
     }
     
@@ -54,7 +55,7 @@ final class MainViewController : UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    private func setLayout() {
+    private func setHierarchy() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
@@ -64,7 +65,9 @@ final class MainViewController : UIViewController {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        
+    }
+    
+    private func setLayout() {
         [mainPoster, gradiant, logo, profileImage, label1, dummyView].forEach {
             contentView.addSubview($0)
         }
