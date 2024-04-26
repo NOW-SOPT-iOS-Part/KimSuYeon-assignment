@@ -13,10 +13,11 @@ final class MainViewController : UIViewController {
     
     private let scrollView = UIScrollView()
     private var contentView = UIView()
+    private let firstContentViewController = FirstContentViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         self.view.backgroundColor = .black
         setHierarchy()
         setLayout()
@@ -68,7 +69,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, label1, dummyView].forEach {
+        [mainPoster, gradiant, logo, profileImage, label1, dummyView, firstContentViewController.view].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -99,8 +100,13 @@ final class MainViewController : UIViewController {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
             $0.leading.equalToSuperview().inset(20)
         }
+        firstContentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(label1.snp.bottom).offset(14)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(2000)
+        }
         dummyView.snp.makeConstraints {
-            $0.top.equalTo(mainPoster.snp.bottom).offset(200)
+            $0.top.equalTo(mainPoster.snp.bottom).offset(280)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(160)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
