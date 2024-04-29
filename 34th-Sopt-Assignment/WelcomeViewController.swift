@@ -39,7 +39,7 @@ final class WelcomeViewController: UIViewController {
         $0.setTitle("메인으로", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        //$0.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
     }
     
     var id: String?
@@ -51,6 +51,11 @@ final class WelcomeViewController: UIViewController {
     
     func setLabelText(id: String?) {
         self.id = id
+    }
+    
+    private func pushToMainVC() { //네비게이션 방식
+        let mainViewController = MainViewController()
+        self.navigationController?.pushViewController(mainViewController, animated: true)
     }
     
     private func setLayout() {
@@ -69,5 +74,10 @@ final class WelcomeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
+    }
+    
+    @objc
+    private func mainButtonDidTap(){
+        pushToMainVC()
     }
 }

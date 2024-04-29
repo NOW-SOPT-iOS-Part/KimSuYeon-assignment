@@ -15,14 +15,6 @@ final class MainViewController : UIViewController {
     private var contentView = UIView()
     private let firstContentViewController = FirstContentViewController()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = .black
-        setHierarchy()
-        setLayout()
-    }
-    
     private let mainPoster = UIImageView().then {
         $0.image = UIImage(named: "poster")
     }
@@ -40,20 +32,29 @@ final class MainViewController : UIViewController {
     }
     
     private let label1 = UILabel().then {
-        $0.text = "티빙에서 꼭 봐야하는 콘텐츠"
+        $0.text = "수연이가 좋아하는 영화들"
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    private let dummyView = UIView().then { //스크롤뷰 확인용
-        $0.backgroundColor = .white
+    //스크롤뷰 확인용
+    private let dummyView = UIView().then {
+        $0.backgroundColor = .black
     }
     
     //네비게이션 바 숨기기
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = .black
+        setHierarchy()
+        setLayout()
     }
     
     private func setHierarchy() {
@@ -108,7 +109,7 @@ final class MainViewController : UIViewController {
         dummyView.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(280)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(160)
+            $0.height.equalTo(40)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
         }
     }
