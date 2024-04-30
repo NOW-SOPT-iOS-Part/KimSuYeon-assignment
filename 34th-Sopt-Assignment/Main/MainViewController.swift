@@ -14,6 +14,7 @@ final class MainViewController : UIViewController {
     private let scrollView = UIScrollView()
     private var contentView = UIView()
     private let firstContentViewController = FirstContentViewController()
+    private let liveContentViewController = LiveContentViewController()
     
     private let mainPoster = UIImageView().then {
         $0.image = UIImage(named: "poster")
@@ -31,24 +32,24 @@ final class MainViewController : UIViewController {
         $0.image = UIImage(named: "profile")
     }
 
-    private let titleLabel = UILabel().then {
-        $0.text = "mmaybei 님이 3번 이상 관람한 영화"
+    private let title1Label = UILabel().then {
+        $0.text = "티빙에서 꼭 봐야하는 컨텐츠"
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    private let totalButton = UILabel().then {
-        $0.text = "전체보기>"
-        $0.textColor = UIColor(resource: .gray2)
+    private let title2Label = UILabel().then {
+        $0.text = "인기 LIVE 채널"
+        $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
-        $0.font = UIFont(name: "Pretendard-Medium", size: 11)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
     //스크롤뷰 확인용
-    private let dummyView = UIView().then {
+    private let footerView = UIView().then {
         $0.backgroundColor = .black
     }
     
@@ -78,7 +79,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, titleLabel, totalButton, dummyView, firstContentViewController.view].forEach {
+        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -105,23 +106,28 @@ final class MainViewController : UIViewController {
             $0.top.equalToSuperview().offset(58)
             $0.trailing.equalToSuperview().inset(20)
         }
-        titleLabel.snp.makeConstraints {
+        title1Label.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
             $0.leading.equalToSuperview().inset(20)
         }
-        totalButton.snp.makeConstraints {
-            $0.centerY.equalTo(titleLabel)
-            $0.trailing.equalToSuperview().inset(16)
-        }
         firstContentViewController.view.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(14)
+            $0.top.equalTo(title1Label.snp.bottom).offset(14)
+            $0.bottom.equalTo(title1Label.snp.bottom).offset(200)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(contentView).inset(40)
         }
-        dummyView.snp.makeConstraints {
-            $0.top.equalTo(mainPoster.snp.bottom).offset(280)
+        title2Label.snp.makeConstraints {
+            $0.top.equalTo(firstContentViewController.view.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        liveContentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(title2Label.snp.bottom).offset(14)
+            $0.bottom.equalTo(title2Label.snp.bottom).offset(180)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(40)
+        }
+        footerView.snp.makeConstraints {
+            $0.top.equalTo(liveContentViewController.view.snp.bottom).offset(30)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(20)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
         }
     }

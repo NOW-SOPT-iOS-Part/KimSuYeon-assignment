@@ -1,18 +1,18 @@
 //
-//  FirstContentViewController.swift
+//  LiveContentViewController.swift
 //  34th-Sopt-Assignment
 //
-//  Created by 예삐 on 4/25/24.
+//  Created by 예삐 on 4/30/24.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class FirstContentViewController: UIViewController {
+final class LiveContentViewController: UIViewController {
     
-    final let cellWidth: CGFloat = 98
-    final let cellHeight: CGFloat = 180
+    final let cellWidth: CGFloat = 160
+    final let cellHeight: CGFloat = 144
     final let contentInterSpacing: CGFloat = 8
     final let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     
@@ -27,7 +27,7 @@ final class FirstContentViewController: UIViewController {
         return collectionView
     }()
     
-    private var contentData = FirstContentModel.dummy() {
+    private var contentData = LiveContentModel.dummy() {
         didSet {
             self.collectionView.reloadData()
         }
@@ -59,7 +59,7 @@ final class FirstContentViewController: UIViewController {
     }
     
     private func register() {
-        collectionView.register(FirstContentViewCell.self, forCellWithReuseIdentifier: FirstContentViewCell.identifier)
+        collectionView.register(LiveContentViewCell.self, forCellWithReuseIdentifier: LiveContentViewCell.identifier)
     }
     
     private func setDelegate() {
@@ -68,28 +68,32 @@ final class FirstContentViewController: UIViewController {
     }
 }
 
-extension FirstContentViewController: UICollectionViewDelegateFlowLayout {
+extension LiveContentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth, height: cellHeight)
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-          return contentInterSpacing
-      }
-      
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return contentInterSpacing
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return contentInset
     }
 }
 
-extension FirstContentViewController: UICollectionViewDataSource {
+extension LiveContentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return contentData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstContentViewCell.identifier, for: indexPath) as? FirstContentViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveContentViewCell.identifier, for: indexPath) as? LiveContentViewCell else { return UICollectionViewCell() }
         cell.dataBind(contentData[indexPath.item], itemRow: indexPath.item)
         return cell
     }
+}
+
+#Preview {
+    LiveContentViewController()
 }
