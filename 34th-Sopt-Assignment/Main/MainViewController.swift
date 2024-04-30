@@ -13,8 +13,10 @@ final class MainViewController : UIViewController {
     
     private let scrollView = UIScrollView()
     private var contentView = UIView()
+    
     private let firstContentViewController = FirstContentViewController()
     private let liveContentViewController = LiveContentViewController()
+    private let secondContentViewController = SecondContentViewController()
     
     private let mainPoster = UIImageView().then {
         $0.image = UIImage(named: "poster")
@@ -42,6 +44,14 @@ final class MainViewController : UIViewController {
     
     private let title2Label = UILabel().then {
         $0.text = "인기 LIVE 채널"
+        $0.textColor = .white
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    }
+    
+    private let title3Label = UILabel().then {
+        $0.text = "mmaybei 님이 추천하는 영화"
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
@@ -79,7 +89,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view].forEach {
+        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view, title3Label, secondContentViewController.view].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -124,8 +134,17 @@ final class MainViewController : UIViewController {
             $0.bottom.equalTo(title2Label.snp.bottom).offset(180)
             $0.leading.trailing.equalToSuperview()
         }
+        title3Label.snp.makeConstraints {
+            $0.top.equalTo(liveContentViewController.view.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        secondContentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(title3Label.snp.bottom).offset(14)
+            $0.bottom.equalTo(title3Label.snp.bottom).offset(200)
+            $0.leading.trailing.equalToSuperview()
+        }
         footerView.snp.makeConstraints {
-            $0.top.equalTo(liveContentViewController.view.snp.bottom).offset(30)
+            $0.top.equalTo(secondContentViewController.view.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(20)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
