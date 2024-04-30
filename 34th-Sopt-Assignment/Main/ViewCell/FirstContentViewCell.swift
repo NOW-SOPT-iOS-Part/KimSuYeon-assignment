@@ -52,7 +52,7 @@ final class FirstContentViewCell: UICollectionViewCell {
         }
         
         contentNameLabel.snp.makeConstraints {
-            $0.top.equalTo(contentImageView.snp.bottom).offset(10)
+            $0.top.equalTo(contentImageView.snp.bottom).offset(8)
             $0.leading.equalToSuperview()
         }
     }

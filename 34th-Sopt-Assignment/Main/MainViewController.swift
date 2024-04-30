@@ -58,6 +58,10 @@ final class MainViewController : UIViewController {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
+    private let addImageView = UIImageView().then {
+        $0.image = UIImage(named: "doosan")
+    }
+    
     //스크롤뷰 확인용
     private let footerView = UIView().then {
         $0.backgroundColor = .black
@@ -65,6 +69,7 @@ final class MainViewController : UIViewController {
     
     //네비게이션 바 숨기기
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -89,7 +94,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view, title3Label, secondContentViewController.view].forEach {
+        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view, title3Label, secondContentViewController.view, addImageView].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -143,8 +148,12 @@ final class MainViewController : UIViewController {
             $0.bottom.equalTo(title3Label.snp.bottom).offset(200)
             $0.leading.trailing.equalToSuperview()
         }
+        addImageView.snp.makeConstraints {
+            $0.top.equalTo(secondContentViewController.view.snp.bottom).offset(40)
+            $0.height.equalTo(addImageView.snp.width).multipliedBy(addImageView.image!.size.height / addImageView.image!.size.width) //비율에 맞게
+        }
         footerView.snp.makeConstraints {
-            $0.top.equalTo(secondContentViewController.view.snp.bottom).offset(30)
+            $0.top.equalTo(addImageView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(20)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
