@@ -81,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A347F0772BE074230086DDB1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDA1FF2BD95E4700851A0F /* MainViewController.swift */,
+				A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */,
+				A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */,
+				A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		A3B3750A2BD01C1300AA87E5 = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +118,7 @@
 				A3B3752A2BD0212200AA87E5 /* LoginViewController.swift */,
 				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController.swift */,
 				A317C5B12BD1A56500FBCC33 /* NicknameViewController.swift */,
-				A3CDA1FF2BD95E4700851A0F /* MainViewController.swift */,
-				A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */,
-				A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */,
-				A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */,
+				A347F0772BE074230086DDB1 /* Main */,
 			);
 			path = "34th-Sopt-Assignment";
 			sourceTree = "<group>";
