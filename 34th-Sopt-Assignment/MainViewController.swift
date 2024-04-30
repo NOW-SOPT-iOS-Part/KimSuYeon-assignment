@@ -30,9 +30,9 @@ final class MainViewController : UIViewController {
     private let profileImage = UIImageView().then {
         $0.image = UIImage(named: "profile")
     }
-    
-    private let label1 = UILabel().then {
-        $0.text = "수연이가 좋아하는 영화들"
+
+    private let titleLabel = UILabel().then {
+        $0.text = "수연이가 좋아하는 영화들... 중 몇 개"
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
@@ -70,7 +70,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, label1, dummyView, firstContentViewController.view].forEach {
+        [mainPoster, gradiant, logo, profileImage, titleLabel, dummyView, firstContentViewController.view].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -97,12 +97,12 @@ final class MainViewController : UIViewController {
             $0.top.equalToSuperview().offset(58)
             $0.trailing.equalToSuperview().inset(20)
         }
-        label1.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
             $0.leading.equalToSuperview().inset(20)
         }
         firstContentViewController.view.snp.makeConstraints {
-            $0.top.equalTo(label1.snp.bottom).offset(14)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(14)
             $0.leading.trailing.equalToSuperview()
             $0.width.equalTo(2000)
         }

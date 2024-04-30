@@ -12,7 +12,7 @@ import Then
 final class FirstContentViewController: UIViewController {
     
     final let cellWidth: CGFloat = 98
-    final let cellHeight: CGFloat = 168
+    final let cellHeight: CGFloat = 180
     final let contentInterSpacing: CGFloat = 8
     final let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     

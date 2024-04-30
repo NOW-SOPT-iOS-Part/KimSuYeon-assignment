@@ -19,8 +19,9 @@ final class FirstContentViewCell: UICollectionViewCell {
     
     private let contentNameLabel = UILabel().then {
         $0.textColor = .white
-        $0.textAlignment = .center
+        $0.textAlignment = .left
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
+        $0.numberOfLines = 2
     }
     
     override init(frame: CGRect) {
@@ -51,7 +52,7 @@ final class FirstContentViewCell: UICollectionViewCell {
         }
         
         contentNameLabel.snp.makeConstraints {
-            $0.top.equalTo(contentImageView.snp.bottom).offset(2)
+            $0.top.equalTo(contentImageView.snp.bottom).offset(4)
             $0.leading.equalToSuperview()
         }
     }
