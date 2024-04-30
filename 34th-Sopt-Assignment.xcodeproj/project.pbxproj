@@ -91,14 +91,38 @@
 			isa = PBXGroup;
 			children = (
 				A3CDA1FF2BD95E4700851A0F /* MainViewController.swift */,
-				A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */,
-				A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */,
-				A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */,
-				A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */,
-				A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */,
-				A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */,
+				A347F07F2BE0E0A50086DDB1 /* ViewController */,
+				A347F0802BE0E0AC0086DDB1 /* ViewCell */,
+				A347F07E2BE0E09B0086DDB1 /* Model */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A347F07E2BE0E09B0086DDB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */,
+				A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A347F07F2BE0E0A50086DDB1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */,
+				A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A347F0802BE0E0AC0086DDB1 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */,
+				A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */,
+			);
+			path = ViewCell;
 			sourceTree = "<group>";
 		};
 		A3B3750A2BD01C1300AA87E5 = {
