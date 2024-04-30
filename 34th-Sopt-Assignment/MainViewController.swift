@@ -32,11 +32,19 @@ final class MainViewController : UIViewController {
     }
 
     private let titleLabel = UILabel().then {
-        $0.text = "수연이가 좋아하는 영화들... 중 몇 개"
+        $0.text = "mmaybei 님이 3번 이상 관람한 영화"
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 1
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    }
+    
+    private let totalButton = UILabel().then {
+        $0.text = "전체보기>"
+        $0.textColor = UIColor(resource: .gray2)
+        $0.textAlignment = .center
+        $0.numberOfLines = 1
+        $0.font = UIFont(name: "Pretendard-Medium", size: 11)
     }
     
     //스크롤뷰 확인용
@@ -70,7 +78,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, titleLabel, dummyView, firstContentViewController.view].forEach {
+        [mainPoster, gradiant, logo, profileImage, titleLabel, totalButton, dummyView, firstContentViewController.view].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -100,6 +108,10 @@ final class MainViewController : UIViewController {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
             $0.leading.equalToSuperview().inset(20)
+        }
+        totalButton.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel)
+            $0.trailing.equalToSuperview().inset(16)
         }
         firstContentViewController.view.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(14)
