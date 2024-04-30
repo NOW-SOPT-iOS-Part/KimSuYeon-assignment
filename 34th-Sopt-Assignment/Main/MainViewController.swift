@@ -116,7 +116,7 @@ final class MainViewController : UIViewController {
         firstContentViewController.view.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(14)
             $0.leading.trailing.equalToSuperview()
-            $0.width.equalTo(2000)
+            $0.bottom.equalTo(contentView).inset(40)
         }
         dummyView.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(280)
