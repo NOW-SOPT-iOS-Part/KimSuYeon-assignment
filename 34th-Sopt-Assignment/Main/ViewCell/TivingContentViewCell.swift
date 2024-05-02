@@ -1,17 +1,17 @@
 //
-//  SecondContentViewCell.swift
+//  TivingContentViewCell.swift
 //  34th-Sopt-Assignment
 //
-//  Created by 예삐 on 4/30/24.
+//  Created by 예삐 on 4/25/24.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class SecondContentViewCell: UICollectionViewCell {
+final class TivingContentViewCell: UICollectionViewCell {
     
-    static let identifier = "SecondContentViewCell"
+    static let identifier = "TivingContentViewCell"
     
     var itemRow: Int?
     
@@ -52,17 +52,16 @@ final class SecondContentViewCell: UICollectionViewCell {
         }
         
         contentNameLabel.snp.makeConstraints {
-            $0.top.equalTo(contentImageView.snp.bottom).offset(4)
+            $0.top.equalTo(contentImageView.snp.bottom).offset(8)
             $0.leading.equalToSuperview()
         }
     }
 }
 
-extension SecondContentViewCell {
-    func dataBind(_ contentData: SecondContentModel, itemRow: Int) {
+extension TivingContentViewCell {
+    func dataBind(_ contentData: TivingContentModel, itemRow: Int) {
         contentImageView.image = contentData.contentImage
         contentNameLabel.text = contentData.contentNameLabel
         self.itemRow = itemRow //해당 cell의 index
     }
 }
-

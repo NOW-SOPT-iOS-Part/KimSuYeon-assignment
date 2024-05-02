@@ -1,17 +1,17 @@
 //
-//  FirstContentViewCell.swift
+//  RecommendContentViewCell.swift
 //  34th-Sopt-Assignment
 //
-//  Created by 예삐 on 4/25/24.
+//  Created by 예삐 on 4/30/24.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class FirstContentViewCell: UICollectionViewCell {
+final class RecommendContentViewCell: UICollectionViewCell {
     
-    static let identifier = "FirstContentViewCell"
+    static let identifier = "RecommendContentViewCell"
     
     var itemRow: Int?
     
@@ -52,16 +52,17 @@ final class FirstContentViewCell: UICollectionViewCell {
         }
         
         contentNameLabel.snp.makeConstraints {
-            $0.top.equalTo(contentImageView.snp.bottom).offset(8)
+            $0.top.equalTo(contentImageView.snp.bottom).offset(4)
             $0.leading.equalToSuperview()
         }
     }
 }
 
-extension FirstContentViewCell {
-    func dataBind(_ contentData: FirstContentModel, itemRow: Int) {
+extension RecommendContentViewCell {
+    func dataBind(_ contentData: RecommendContentModel, itemRow: Int) {
         contentImageView.image = contentData.contentImage
         contentNameLabel.text = contentData.contentNameLabel
         self.itemRow = itemRow //해당 cell의 index
     }
 }
+

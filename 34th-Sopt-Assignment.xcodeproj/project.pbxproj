@@ -12,9 +12,9 @@
 		A347F0792BE0D5E20086DDB1 /* LiveContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */; };
 		A347F07B2BE0D5EE0086DDB1 /* LiveContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */; };
 		A347F07D2BE0D5FE0086DDB1 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */; };
-		A347F0822BE0E1220086DDB1 /* SecondContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0812BE0E1220086DDB1 /* SecondContentViewController.swift */; };
-		A347F0842BE0E17E0086DDB1 /* SecondContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0832BE0E17E0086DDB1 /* SecondContentViewCell.swift */; };
-		A347F0862BE0E1B90086DDB1 /* SecondContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0852BE0E1B90086DDB1 /* SecondContentModel.swift */; };
+		A347F0822BE0E1220086DDB1 /* RecommendContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0812BE0E1220086DDB1 /* RecommendContentViewController.swift */; };
+		A347F0842BE0E17E0086DDB1 /* RecommendContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0832BE0E17E0086DDB1 /* RecommendContentViewCell.swift */; };
+		A347F0862BE0E1B90086DDB1 /* RecommendContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0852BE0E1B90086DDB1 /* RecommendContentModel.swift */; };
 		A3B375172BD01C1300AA87E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375162BD01C1300AA87E5 /* AppDelegate.swift */; };
 		A3B375192BD01C1300AA87E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */; };
 		A3B3751B2BD01C1300AA87E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3751A2BD01C1300AA87E5 /* ViewController.swift */; };
@@ -38,9 +38,9 @@
 		A3CDA2122BD981BD00851A0F /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2092BD981BD00851A0F /* Pretendard-Regular.otf */; };
 		A3CDA2132BD981BD00851A0F /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA20A2BD981BD00851A0F /* Pretendard-Bold.otf */; };
 		A3CDA2142BD981BD00851A0F /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA20B2BD981BD00851A0F /* Pretendard-Light.otf */; };
-		A3CDA21C2BDA888800851A0F /* FirstContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */; };
-		A3CDA21E2BDA891600851A0F /* FirstContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */; };
-		A3CDA2202BDA8C5600851A0F /* FirstContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */; };
+		A3CDA21C2BDA888800851A0F /* TivingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21B2BDA888800851A0F /* TivingContentModel.swift */; };
+		A3CDA21E2BDA891600851A0F /* TivingContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21D2BDA891600851A0F /* TivingContentViewCell.swift */; };
+		A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21F2BDA8C5600851A0F /* TivingContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +49,9 @@
 		A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentModel.swift; sourceTree = "<group>"; };
 		A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewCell.swift; sourceTree = "<group>"; };
 		A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
-		A347F0812BE0E1220086DDB1 /* SecondContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondContentViewController.swift; sourceTree = "<group>"; };
-		A347F0832BE0E17E0086DDB1 /* SecondContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondContentViewCell.swift; sourceTree = "<group>"; };
-		A347F0852BE0E1B90086DDB1 /* SecondContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondContentModel.swift; sourceTree = "<group>"; };
+		A347F0812BE0E1220086DDB1 /* RecommendContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentViewController.swift; sourceTree = "<group>"; };
+		A347F0832BE0E17E0086DDB1 /* RecommendContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentViewCell.swift; sourceTree = "<group>"; };
+		A347F0852BE0E1B90086DDB1 /* RecommendContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentModel.swift; sourceTree = "<group>"; };
 		A3B375132BD01C1300AA87E5 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B375162BD01C1300AA87E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +74,9 @@
 		A3CDA2092BD981BD00851A0F /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		A3CDA20A2BD981BD00851A0F /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		A3CDA20B2BD981BD00851A0F /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Light.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Light.otf"; sourceTree = "<group>"; };
-		A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstContentModel.swift; sourceTree = "<group>"; };
-		A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstContentViewCell.swift; sourceTree = "<group>"; };
-		A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstContentViewController.swift; sourceTree = "<group>"; };
+		A3CDA21B2BDA888800851A0F /* TivingContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentModel.swift; sourceTree = "<group>"; };
+		A3CDA21D2BDA891600851A0F /* TivingContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentViewCell.swift; sourceTree = "<group>"; };
+		A3CDA21F2BDA8C5600851A0F /* TivingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +107,9 @@
 		A347F07E2BE0E09B0086DDB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3CDA21B2BDA888800851A0F /* FirstContentModel.swift */,
+				A3CDA21B2BDA888800851A0F /* TivingContentModel.swift */,
 				A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */,
-				A347F0852BE0E1B90086DDB1 /* SecondContentModel.swift */,
+				A347F0852BE0E1B90086DDB1 /* RecommendContentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,9 +117,9 @@
 		A347F07F2BE0E0A50086DDB1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A3CDA21F2BDA8C5600851A0F /* FirstContentViewController.swift */,
-				A347F0812BE0E1220086DDB1 /* SecondContentViewController.swift */,
+				A3CDA21F2BDA8C5600851A0F /* TivingContentViewController.swift */,
 				A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */,
+				A347F0812BE0E1220086DDB1 /* RecommendContentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 		A347F0802BE0E0AC0086DDB1 /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A3CDA21D2BDA891600851A0F /* FirstContentViewCell.swift */,
-				A347F0832BE0E17E0086DDB1 /* SecondContentViewCell.swift */,
+				A3CDA21D2BDA891600851A0F /* TivingContentViewCell.swift */,
 				A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */,
+				A347F0832BE0E17E0086DDB1 /* RecommendContentViewCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -309,17 +309,17 @@
 				A3B3752D2BD0213E00AA87E5 /* WelcomeViewController.swift in Sources */,
 				A317C5B22BD1A56500FBCC33 /* NicknameViewController.swift in Sources */,
 				A3B3751B2BD01C1300AA87E5 /* ViewController.swift in Sources */,
-				A347F0842BE0E17E0086DDB1 /* SecondContentViewCell.swift in Sources */,
+				A347F0842BE0E17E0086DDB1 /* RecommendContentViewCell.swift in Sources */,
 				A317C5B42BD1C8F500FBCC33 /* UIView+.swift in Sources */,
-				A3CDA21C2BDA888800851A0F /* FirstContentModel.swift in Sources */,
-				A347F0822BE0E1220086DDB1 /* SecondContentViewController.swift in Sources */,
+				A3CDA21C2BDA888800851A0F /* TivingContentModel.swift in Sources */,
+				A347F0822BE0E1220086DDB1 /* RecommendContentViewController.swift in Sources */,
 				A3B375172BD01C1300AA87E5 /* AppDelegate.swift in Sources */,
-				A347F0862BE0E1B90086DDB1 /* SecondContentModel.swift in Sources */,
+				A347F0862BE0E1B90086DDB1 /* RecommendContentModel.swift in Sources */,
 				A347F07B2BE0D5EE0086DDB1 /* LiveContentViewCell.swift in Sources */,
 				A3B375192BD01C1300AA87E5 /* SceneDelegate.swift in Sources */,
-				A3CDA2202BDA8C5600851A0F /* FirstContentViewController.swift in Sources */,
+				A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */,
 				A3CDA2002BD95E4700851A0F /* MainViewController.swift in Sources */,
-				A3CDA21E2BDA891600851A0F /* FirstContentViewCell.swift in Sources */,
+				A3CDA21E2BDA891600851A0F /* TivingContentViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

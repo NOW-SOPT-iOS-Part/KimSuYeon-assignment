@@ -9,14 +9,14 @@ import UIKit
 import SnapKit
 import Then
 
-final class MainViewController : UIViewController {
+final class MainViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private var contentView = UIView()
     
-    private let firstContentViewController = FirstContentViewController()
+    private let tivingContentViewController = TivingContentViewController()
     private let liveContentViewController = LiveContentViewController()
-    private let secondContentViewController = SecondContentViewController()
+    private let recommendContentViewController = RecommendContentViewController()
     
     private let mainPoster = UIImageView().then {
         $0.image = UIImage(named: "poster")
@@ -34,7 +34,7 @@ final class MainViewController : UIViewController {
         $0.image = UIImage(named: "profile")
     }
 
-    private let title1Label = UILabel().then {
+    private let tivingLabel = UILabel().then {
         $0.text = "티빙에서 꼭 봐야하는 컨텐츠"
         $0.textColor = .white
         $0.textAlignment = .center
@@ -42,7 +42,7 @@ final class MainViewController : UIViewController {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    private let title2Label = UILabel().then {
+    private let liveLabel = UILabel().then {
         $0.text = "인기 LIVE 채널"
         $0.textColor = .white
         $0.textAlignment = .center
@@ -50,7 +50,7 @@ final class MainViewController : UIViewController {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    private let title3Label = UILabel().then {
+    private let recommendLabel = UILabel().then {
         $0.text = "mmaybei 님이 추천하는 영화"
         $0.textColor = .white
         $0.textAlignment = .center
@@ -94,7 +94,7 @@ final class MainViewController : UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, title1Label, footerView, firstContentViewController.view, title2Label, liveContentViewController.view, title3Label, secondContentViewController.view, addImageView].forEach {
+        [mainPoster, gradiant, logo, profileImage, tivingLabel, footerView, tivingContentViewController.view, liveLabel, liveContentViewController.view, recommendLabel, recommendContentViewController.view, addImageView].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints {
@@ -121,35 +121,35 @@ final class MainViewController : UIViewController {
             $0.top.equalToSuperview().offset(58)
             $0.trailing.equalToSuperview().inset(20)
         }
-        title1Label.snp.makeConstraints {
+        tivingLabel.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
             $0.leading.equalToSuperview().inset(20)
         }
-        firstContentViewController.view.snp.makeConstraints {
-            $0.top.equalTo(title1Label.snp.bottom).offset(14)
-            $0.bottom.equalTo(title1Label.snp.bottom).offset(200)
+        tivingContentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(tivingLabel.snp.bottom).offset(14)
+            $0.bottom.equalTo(tivingLabel.snp.bottom).offset(200)
             $0.leading.trailing.equalToSuperview()
         }
-        title2Label.snp.makeConstraints {
-            $0.top.equalTo(firstContentViewController.view.snp.bottom).offset(20)
+        liveLabel.snp.makeConstraints {
+            $0.top.equalTo(tivingContentViewController.view.snp.bottom).offset(20)
             $0.leading.equalToSuperview().inset(20)
         }
         liveContentViewController.view.snp.makeConstraints {
-            $0.top.equalTo(title2Label.snp.bottom).offset(14)
-            $0.bottom.equalTo(title2Label.snp.bottom).offset(180)
+            $0.top.equalTo(liveLabel.snp.bottom).offset(14)
+            $0.bottom.equalTo(liveLabel.snp.bottom).offset(180)
             $0.leading.trailing.equalToSuperview()
         }
-        title3Label.snp.makeConstraints {
+        recommendLabel.snp.makeConstraints {
             $0.top.equalTo(liveContentViewController.view.snp.bottom).offset(20)
             $0.leading.equalToSuperview().inset(20)
         }
-        secondContentViewController.view.snp.makeConstraints {
-            $0.top.equalTo(title3Label.snp.bottom).offset(14)
-            $0.bottom.equalTo(title3Label.snp.bottom).offset(200)
+        recommendContentViewController.view.snp.makeConstraints {
+            $0.top.equalTo(recommendLabel.snp.bottom).offset(14)
+            $0.bottom.equalTo(recommendLabel.snp.bottom).offset(200)
             $0.leading.trailing.equalToSuperview()
         }
         addImageView.snp.makeConstraints {
-            $0.top.equalTo(secondContentViewController.view.snp.bottom).offset(40)
+            $0.top.equalTo(recommendContentViewController.view.snp.bottom).offset(40)
             $0.height.equalTo(addImageView.snp.width).multipliedBy(addImageView.image!.size.height / addImageView.image!.size.width) //비율에 맞게
         }
         footerView.snp.makeConstraints {

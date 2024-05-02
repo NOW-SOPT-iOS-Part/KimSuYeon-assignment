@@ -93,7 +93,3 @@ extension LiveContentViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
-#Preview {
-    LiveContentViewController()
-}

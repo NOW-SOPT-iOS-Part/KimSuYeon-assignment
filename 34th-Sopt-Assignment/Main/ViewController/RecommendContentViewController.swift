@@ -1,5 +1,5 @@
 //
-//  SecondContentViewController.swift
+//  RecommendContentViewController.swift
 //  34th-Sopt-Assignment
 //
 //  Created by 예삐 on 4/30/24.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class SecondContentViewController: UIViewController {
+final class RecommendContentViewController: UIViewController {
     
     final let cellWidth: CGFloat = 98
     final let cellHeight: CGFloat = 180
@@ -27,7 +27,7 @@ final class SecondContentViewController: UIViewController {
         return collectionView
     }()
     
-    private var contentData = SecondContentModel.dummy() {
+    private var contentData = RecommendContentModel.dummy() {
         didSet {
             self.collectionView.reloadData()
         }
@@ -59,7 +59,7 @@ final class SecondContentViewController: UIViewController {
     }
     
     private func register() {
-        collectionView.register(SecondContentViewCell.self, forCellWithReuseIdentifier: SecondContentViewCell.identifier)
+        collectionView.register(RecommendContentViewCell.self, forCellWithReuseIdentifier: RecommendContentViewCell.identifier)
     }
     
     private func setDelegate() {
@@ -68,7 +68,7 @@ final class SecondContentViewController: UIViewController {
     }
 }
 
-extension SecondContentViewController: UICollectionViewDelegateFlowLayout {
+extension RecommendContentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth, height: cellHeight)
       }
@@ -82,13 +82,13 @@ extension SecondContentViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension SecondContentViewController: UICollectionViewDataSource {
+extension RecommendContentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return contentData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondContentViewCell.identifier, for: indexPath) as? SecondContentViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendContentViewCell.identifier, for: indexPath) as? RecommendContentViewCell else { return UICollectionViewCell() }
         cell.dataBind(contentData[indexPath.item], itemRow: indexPath.item)
         return cell
     }
