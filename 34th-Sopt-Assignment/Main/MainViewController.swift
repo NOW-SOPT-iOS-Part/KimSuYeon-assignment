@@ -94,9 +94,21 @@ final class MainViewController: UIViewController {
     }
     
     private func setLayout() {
-        [mainPoster, gradiant, logo, profileImage, tivingLabel, footerView, tivingContentViewController.view, liveLabel, liveContentViewController.view, recommendLabel, recommendContentViewController.view, addImageView].forEach {
-            contentView.addSubview($0)
-        }
+        contentView.addSubviews(
+            mainPoster,
+            gradiant,
+            logo,
+            profileImage,
+            tivingLabel,
+            footerView,
+            tivingContentViewController.view,
+            liveLabel,
+            liveContentViewController.view,
+            recommendLabel,
+            recommendContentViewController.view,
+            addImageView
+        )
+        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

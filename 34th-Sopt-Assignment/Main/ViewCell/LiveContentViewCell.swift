@@ -55,9 +55,12 @@ final class LiveContentViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        [contentImageView, broadcastLabel, contentNameLabel, ratingLabel].forEach {
-            contentView.addSubview($0)
-        }
+        contentView.addSubviews(
+            contentImageView,
+            broadcastLabel,
+            contentNameLabel,
+            ratingLabel
+        )
         
         contentImageView.snp.makeConstraints {
             $0.top.equalToSuperview()

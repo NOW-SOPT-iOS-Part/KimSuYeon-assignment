@@ -41,9 +41,10 @@ final class RecommendContentViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        [contentImageView, contentNameLabel].forEach {
-            contentView.addSubview($0)
-        }
+        addSubviews(
+            contentImageView,
+            contentNameLabel
+        )
         
         contentImageView.snp.makeConstraints {
             $0.top.equalToSuperview()

@@ -41,16 +41,16 @@ final class TivingContentViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        [contentImageView, contentNameLabel].forEach {
-            contentView.addSubview($0)
-        }
+        contentView.addSubviews(
+            contentImageView,
+            contentNameLabel
+        )
         
         contentImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.width.equalTo(98)
             $0.height.equalTo(146)
         }
-        
         contentNameLabel.snp.makeConstraints {
             $0.top.equalTo(contentImageView.snp.bottom).offset(8)
             $0.leading.equalToSuperview()
