@@ -58,7 +58,7 @@ final class MainViewController: UIViewController {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    private let addImageView = UIImageView().then {
+    private let adImageView = UIImageView().then {
         $0.image = UIImage(named: "doosan")
     }
     
@@ -106,7 +106,7 @@ final class MainViewController: UIViewController {
             liveContentViewController.view,
             recommendLabel,
             recommendContentViewController.view,
-            addImageView
+            adImageView
         )
         
         scrollView.snp.makeConstraints {
@@ -119,7 +119,9 @@ final class MainViewController: UIViewController {
         }
         mainPoster.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(mainPoster.snp.width).multipliedBy(mainPoster.image!.size.height / mainPoster.image!.size.width) //비율에 맞게
+            if let image = mainPoster.image {
+                $0.height.equalTo(mainPoster.snp.width).multipliedBy(image.size.height / image.size.width)
+            } //비율에 맞게
         }
         gradiant.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
@@ -160,12 +162,14 @@ final class MainViewController: UIViewController {
             $0.bottom.equalTo(recommendLabel.snp.bottom).offset(200)
             $0.leading.trailing.equalToSuperview()
         }
-        addImageView.snp.makeConstraints {
+        adImageView.snp.makeConstraints {
             $0.top.equalTo(recommendContentViewController.view.snp.bottom).offset(40)
-            $0.height.equalTo(addImageView.snp.width).multipliedBy(addImageView.image!.size.height / addImageView.image!.size.width) //비율에 맞게
+            if let image = adImageView.image {
+                $0.height.equalTo(adImageView.snp.width).multipliedBy(image.size.height / image.size.width)
+            } //비율에 맞게
         }
         footerView.snp.makeConstraints {
-            $0.top.equalTo(addImageView.snp.bottom).offset(30)
+            $0.top.equalTo(adImageView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(20)
             $0.bottom.equalTo(contentView) //bottom 설정 까먹지 말기
