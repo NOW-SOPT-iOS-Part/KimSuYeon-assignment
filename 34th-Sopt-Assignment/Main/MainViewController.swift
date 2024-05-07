@@ -19,19 +19,19 @@ final class MainViewController: UIViewController {
     private let recommendContentViewController = RecommendContentViewController()
     
     private let mainPoster = UIImageView().then {
-        $0.image = UIImage(named: "poster")
+        $0.image = .poster
     }
     
     private let gradiant = UIImageView().then {
-        $0.image = UIImage(named: "gradiant")
+        $0.image = .gradiant
     }
     
     private let logo = UIImageView().then {
-        $0.image = UIImage(named: "logo")
+        $0.image = .logo
     }
     
     private let profileImage = UIImageView().then {
-        $0.image = UIImage(named: "profile")
+        $0.image = .profile
     }
 
     private let tivingLabel = UILabel().then {
@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
     }
     
     private let adImageView = UIImageView().then {
-        $0.image = UIImage(named: "doosan")
+        $0.image = .doosan
     }
     
     //스크롤뷰 확인용
@@ -69,7 +69,7 @@ final class MainViewController: UIViewController {
     
     //네비게이션 바 숨기기
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(false)
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -119,6 +119,7 @@ final class MainViewController: UIViewController {
         }
         mainPoster.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
             if let image = mainPoster.image {
                 $0.height.equalTo(mainPoster.snp.width).multipliedBy(image.size.height / image.size.width)
             } //비율에 맞게
@@ -164,6 +165,7 @@ final class MainViewController: UIViewController {
         }
         adImageView.snp.makeConstraints {
             $0.top.equalTo(recommendContentViewController.view.snp.bottom).offset(40)
+            $0.leading.trailing.equalToSuperview()
             if let image = adImageView.image {
                 $0.height.equalTo(adImageView.snp.width).multipliedBy(image.size.height / image.size.width)
             } //비율에 맞게
