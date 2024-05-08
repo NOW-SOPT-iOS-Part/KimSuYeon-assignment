@@ -60,6 +60,7 @@ final class LiveContentViewCell: UICollectionViewCell {
         
         contentImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
             $0.width.equalTo(160)
             $0.height.equalTo(80)
         }
