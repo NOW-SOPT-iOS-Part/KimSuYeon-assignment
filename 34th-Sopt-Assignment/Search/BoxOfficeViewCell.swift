@@ -53,15 +53,15 @@ final class BoxOfficeViewCell: UITableViewCell {
         
         rankLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
-            $0.top.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
         }
         movieNameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(40)
-            $0.centerY.equalTo(rankLabel)
+            $0.centerY.equalToSuperview()
         }
         audienceLabel.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(20)
-            $0.centerY.equalTo(rankLabel)
+            $0.centerY.equalToSuperview()
         }
     }
 }
