@@ -29,7 +29,18 @@ final class BoxOfficeViewController: UIViewController {
     }
     
     private func requestDailyBoxOfficeList() {
-        BoxOfficeService.shared.dailyBoxOfficeList(date: "\(20240509)") { [weak self] response in switch response {
+        
+        var date = ""
+        
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        if let yesterday {
+            date = format.string(from: yesterday)
+        }
+        
+        BoxOfficeService.shared.dailyBoxOfficeList(date: date) { [weak self] response in switch response {
             case .success(let data):
                 guard let data = data as? BoxOfficeResponseModel else {
                     return }
