@@ -12,6 +12,8 @@ import Then
 
 final class SearchViewController: UIViewController {
     
+    private let boxOfficeViewController = BoxOfficeViewController()
+    
     private lazy var backButton = UIButton().then {
         $0.setImage(UIImage(named: "back-icon"), for: .normal)
         $0.frame = CGRect(x: 0, y:0, width: 20, height: 20)
@@ -29,7 +31,7 @@ final class SearchViewController: UIViewController {
         $0.textColor = .white
     }
     
-    private let lankingLabel = UILabel().then {
+    private let RankingLabel = UILabel().then {
         $0.text = "일일 박스오피스 순위"
         $0.textColor = .white
         $0.textAlignment = .center
@@ -42,6 +44,12 @@ final class SearchViewController: UIViewController {
         navigationController?.popViewController(animated: false)
     }
     
+    //네비게이션 바 숨기기
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -50,7 +58,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func setLayout() {
-        self.view.addSubviews(backButton, searchTextField, lankingLabel)
+        self.view.addSubviews(backButton, searchTextField, RankingLabel, boxOfficeViewController.view)
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(12)
             $0.centerY.equalTo(searchTextField)
@@ -62,9 +70,14 @@ final class SearchViewController: UIViewController {
             $0.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(40)
         }
-        lankingLabel.snp.makeConstraints {
+        RankingLabel.snp.makeConstraints {
             $0.top.equalTo(searchTextField.snp.bottom).offset(40)
             $0.leading.equalToSuperview().inset(20)
+        }
+        boxOfficeViewController.view.snp.makeConstraints {
+            $0.top.equalTo(RankingLabel.snp.bottom).offset(12)
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
 }

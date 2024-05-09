@@ -8,10 +8,10 @@
 import Foundation
 
 struct BoxOfficeResponseModel: Codable {
-    let boxOfficeResponse: BoxOfficeResponse
+    let boxOfficeResult: BoxOfficeResult
 }
 
-struct BoxOfficeResponse: Codable {
+struct BoxOfficeResult: Codable {
     let boxofficeType, showRange: String
     let dailyBoxOfficeList: [DailyBoxOfficeList]
 }
@@ -19,7 +19,7 @@ struct BoxOfficeResponse: Codable {
 struct DailyBoxOfficeList: Codable {
     let rnum, rank, rankInten: String
     let rankOldAndNew: RankOldAndNew
-    let movieCD, movieNm, openDt, salesAmt: String
+    let movieCd, movieNm, openDt, salesAmt: String
     let salesShare, salesInten, salesChange, salesAcc: String
     let audiCnt, audiInten, audiChange, audiAcc: String
     let scrnCnt, showCnt: String
