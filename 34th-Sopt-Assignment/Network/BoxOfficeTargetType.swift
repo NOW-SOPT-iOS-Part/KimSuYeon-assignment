@@ -35,7 +35,7 @@ extension BoxOfficeTargetType: TargetType {
         switch self {
         case .dailyBoxOfficeList(let date):
             let parameters: [String: Any] = [
-                "key": "66bc3cc2ccbe8656d8d9379beecbd628",
+                "key": Config.apiKey,
                 "targetDt": date
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)

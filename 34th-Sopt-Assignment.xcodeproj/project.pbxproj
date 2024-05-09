@@ -523,6 +523,7 @@
 		A3B375282BD01C1600AA87E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 66bc3cc2ccbe8656d8d9379beecbd628;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice";
@@ -552,6 +553,7 @@
 		A3B375292BD01C1600AA87E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 66bc3cc2ccbe8656d8d9379beecbd628;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice";
