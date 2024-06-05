@@ -19,6 +19,8 @@
 		A36FF6ED2C10C75A004BF480 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6EC2C10C75A004BF480 /* LoginViewModel.swift */; };
 		A36FF6F12C10C902004BF480 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6F02C10C902004BF480 /* LoginViewController.swift */; };
 		A36FF6F32C10D66D004BF480 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6F22C10D66D004BF480 /* UIButton+.swift */; };
+		A36FF6F72C110200004BF480 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6F62C110200004BF480 /* WelcomeView.swift */; };
+		A36FF6F92C11020E004BF480 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6F82C11020E004BF480 /* WelcomeViewController.swift */; };
 		A3B375172BD01C1300AA87E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375162BD01C1300AA87E5 /* AppDelegate.swift */; };
 		A3B375192BD01C1300AA87E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */; };
 		A3B3751B2BD01C1300AA87E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3751A2BD01C1300AA87E5 /* ViewController.swift */; };
@@ -26,7 +28,7 @@
 		A3B375202BD01C1600AA87E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B3751F2BD01C1600AA87E5 /* Assets.xcassets */; };
 		A3B375232BD01C1600AA87E5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A3B375222BD01C1600AA87E5 /* Base */; };
 		A3B3752B2BD0212200AA87E5 /* LoginViewController_MVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3752A2BD0212200AA87E5 /* LoginViewController_MVC.swift */; };
-		A3B3752D2BD0213E00AA87E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3752C2BD0213E00AA87E5 /* WelcomeViewController.swift */; };
+		A3B3752D2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */; };
 		A3B375302BD023D500AA87E5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3B3752F2BD023D500AA87E5 /* SnapKit */; };
 		A3B375322BD023D500AA87E5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A3B375312BD023D500AA87E5 /* SnapKit-Dynamic */; };
 		A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375652BD068BD00AA87E5 /* UILabel+.swift */; };
@@ -70,6 +72,8 @@
 		A36FF6EC2C10C75A004BF480 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A36FF6F02C10C902004BF480 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A36FF6F22C10D66D004BF480 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		A36FF6F62C110200004BF480 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A36FF6F82C11020E004BF480 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A3B375132BD01C1300AA87E5 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B375162BD01C1300AA87E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B375182BD01C1300AA87E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		A3B375222BD01C1600AA87E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B375242BD01C1600AA87E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3B3752A2BD0212200AA87E5 /* LoginViewController_MVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController_MVC.swift; sourceTree = "<group>"; };
-		A3B3752C2BD0213E00AA87E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController_MVC.swift; sourceTree = "<group>"; };
 		A3B375652BD068BD00AA87E5 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		A3B375672BD156E600AA87E5 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		A3C4D8222BEC9AD800647B50 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		A36FF6E72C10C6D9004BF480 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				A36FF6F62C110200004BF480 /* WelcomeView.swift */,
+				A36FF6F82C11020E004BF480 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -222,7 +228,7 @@
 				A3C4D8332BECDF2200647B50 /* Network */,
 				A36FF6E62C10C6CA004BF480 /* Presentation */,
 				A3B3752A2BD0212200AA87E5 /* LoginViewController_MVC.swift */,
-				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController.swift */,
+				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */,
 				A317C5B12BD1A56500FBCC33 /* NicknameViewController.swift */,
 				A347F0772BE074230086DDB1 /* Main */,
 				A3C4D81F2BEC9A9900647B50 /* Search */,
@@ -397,12 +403,13 @@
 				A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */,
 				A347F0792BE0D5E20086DDB1 /* LiveContentModel.swift in Sources */,
 				A3B3752B2BD0212200AA87E5 /* LoginViewController_MVC.swift in Sources */,
+				A36FF6F92C11020E004BF480 /* WelcomeViewController.swift in Sources */,
 				A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */,
 				A3C4D8412BED396A00647B50 /* BoxOfficeViewController.swift in Sources */,
 				A347F07D2BE0D5FE0086DDB1 /* LiveContentViewController.swift in Sources */,
 				A36FF6ED2C10C75A004BF480 /* LoginViewModel.swift in Sources */,
 				A3C4D83F2BED395800647B50 /* BoxOfficeViewCell.swift in Sources */,
-				A3B3752D2BD0213E00AA87E5 /* WelcomeViewController.swift in Sources */,
+				A3B3752D2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift in Sources */,
 				A317C5B22BD1A56500FBCC33 /* NicknameViewController.swift in Sources */,
 				A36FF6F12C10C902004BF480 /* LoginViewController.swift in Sources */,
 				A3B3751B2BD01C1300AA87E5 /* ViewController.swift in Sources */,
@@ -420,6 +427,7 @@
 				A347F07B2BE0D5EE0086DDB1 /* LiveContentViewCell.swift in Sources */,
 				A3B375192BD01C1300AA87E5 /* SceneDelegate.swift in Sources */,
 				A3C4D82E2BECD40B00647B50 /* Config.swift in Sources */,
+				A36FF6F72C110200004BF480 /* WelcomeView.swift in Sources */,
 				A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */,
 				A3CDA2002BD95E4700851A0F /* MainViewController.swift in Sources */,
 				A3CDA21E2BDA891600851A0F /* TivingContentViewCell.swift in Sources */,

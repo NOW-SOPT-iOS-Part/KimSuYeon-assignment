@@ -146,7 +146,7 @@ final class LoginViewController_MVC: UIViewController, UITextFieldDelegate {
     
     private func pushToWelcomeVC() { //네비게이션 방식
         let welcomeViewController = WelcomeViewController()
-        welcomeViewController.id = self.idTextField.text
+        //welcomeViewController.id = self.idTextField.text
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
     

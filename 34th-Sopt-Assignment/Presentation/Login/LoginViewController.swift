@@ -14,6 +14,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Property
     
     private let rootView = LoginView()
+    
     private let viewModel = LoginViewModel()
     
     // MARK: - LifeCycle
@@ -27,19 +28,6 @@ final class LoginViewController: UIViewController {
         
         setTarget()
         bindViewModel()
-    }
-    
-    private func setLoginButton() {
-        rootView.loginButton.isEnabled = true
-        rootView.loginButton.backgroundColor = .tvingRed
-        rootView.loginButton.layer.borderWidth = 0
-        rootView.loginButton.setTitleColor(.white, for: .normal)
-    }
-    
-    private func pushToWelcomeVC() { //네비게이션 방식
-        let welcomeViewController = WelcomeViewController()
-        welcomeViewController.id = rootView.idTextField.text
-        self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
 }
 
@@ -71,6 +59,19 @@ private extension LoginViewController {
         rootView.pwClearButton.addTarget(self, action: #selector(pwClearButtonDidTap), for: .touchUpInside)
         rootView.pwEyeButton.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
         rootView.loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
+    
+    func setLoginButton() {
+        rootView.loginButton.isEnabled = true
+        rootView.loginButton.backgroundColor = .tvingRed
+        rootView.loginButton.layer.borderWidth = 0
+        rootView.loginButton.setTitleColor(.white, for: .normal)
+    }
+    
+    func pushToWelcomeVC() {
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.id = rootView.idTextField.text
+        self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
     
     @objc
