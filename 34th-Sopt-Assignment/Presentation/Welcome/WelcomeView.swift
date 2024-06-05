@@ -58,7 +58,6 @@ private extension WelcomeView {
             $0.backgroundColor = .tvingRed
             $0.layer.cornerRadius = 3
         }
-        
     }
     
     func setViewHierarchy() {
@@ -70,10 +69,12 @@ private extension WelcomeView {
             $0.top.equalToSuperview().offset(58)
             $0.leading.trailing.equalToSuperview()
         }
+        
         welcomeLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(336)
             $0.centerX.equalToSuperview()
         }
+        
         mainButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
             $0.leading.trailing.equalToSuperview().inset(20)
