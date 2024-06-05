@@ -19,17 +19,17 @@ final class LoginView: UIView {
     
     private let pwView = UIView()
     
-    private let idTextField = UITextField()
+    let idTextField = UITextField()
     
-    private let pwTextField = UITextField()
+    let pwTextField = UITextField()
     
-    private let idClearButton = UIButton()
+    let idClearButton = UIButton()
     
-    private let pwClearButton = UIButton()
+    let pwClearButton = UIButton()
     
-    private let pwEyeButton = UIButton()
+    let pwEyeButton = UIButton()
     
-    private let loginButton = UIButton()
+    let loginButton = UIButton()
     
     private let idFindLabel = UILabel()
     
@@ -98,6 +98,8 @@ private extension LoginView {
             
             $0.keyboardType = .asciiCapable
             $0.autocapitalizationType = .none
+            
+            $0.isSecureTextEntry = true
         }
         
         idClearButton.do {
@@ -117,6 +119,8 @@ private extension LoginView {
             $0.setLayer(borderWidth: 1, borderColor: .gray4, cornerRadius: 3)
             $0.backgroundColor = .black
             $0.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+            
+            $0.isEnabled = false
         }
         
         idFindLabel.do {
