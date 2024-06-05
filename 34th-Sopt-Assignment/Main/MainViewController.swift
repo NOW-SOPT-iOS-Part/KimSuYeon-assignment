@@ -33,6 +33,12 @@ final class MainViewController: UIViewController {
     private let profileImage = UIImageView().then {
         $0.image = .profile
     }
+    
+    private lazy var searchButton = UIButton().then {
+        $0.setImage(UIImage(named: "search"), for: .normal)
+        //$0.frame = CGRect(x: 0, y:0, width: 24, height: 24)
+        $0.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
+    }
 
     private let tivingLabel = UILabel().then {
         $0.text = "티빙에서 꼭 봐야하는 컨텐츠"
@@ -73,6 +79,16 @@ final class MainViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    private func pushToSearchVC() { //네비게이션 방식
+        let searchViewController = SearchViewController()
+        self.navigationController?.pushViewController(searchViewController, animated: false)
+    }
+    
+    @objc
+    private func searchButtonDidTap(){
+        pushToSearchVC()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,6 +115,7 @@ final class MainViewController: UIViewController {
             gradiant,
             logo,
             profileImage,
+            searchButton,
             tivingLabel,
             footerView,
             tivingContentViewController.view,
@@ -135,6 +152,11 @@ final class MainViewController: UIViewController {
         profileImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(58)
             $0.trailing.equalToSuperview().inset(20)
+        }
+        searchButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(60)
+            $0.centerY.equalTo(profileImage)
+            $0.width.height.equalTo(36)
         }
         tivingLabel.snp.makeConstraints {
             $0.top.equalTo(mainPoster.snp.bottom).offset(44)
