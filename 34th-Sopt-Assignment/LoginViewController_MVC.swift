@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class LoginViewController: UIViewController, UITextFieldDelegate {
+final class LoginViewController_MVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(resource: .gray4)
         
-        $0.setPlaceholder(placeholder: "아이디", fontColor: UIColor(resource: .gray2))
+        //$0.setPlaceholder(placeholder: "아이디", fontColor: UIColor(resource: .gray2))
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         $0.textColor = UIColor(resource: .gray2)
         
@@ -53,7 +53,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(resource: .gray4)
         
-        $0.setPlaceholder(placeholder: "비밀번호", fontColor: UIColor(resource: .gray2))
+        //$0.setPlaceholder(placeholder: "비밀번호", fontColor: UIColor(resource: .gray2))
         $0.textColor = UIColor(resource: .gray2)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     
@@ -133,7 +133,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var nicknameMakeLabel = UILabel().then {
         $0.text = "닉네임 만들러가기"
-        $0.underLineText(forText: $0.text ?? "")
+        //$0.underLineText(forText: $0.text ?? "")
         $0.textColor = UIColor(resource: .gray2)
         $0.textAlignment = .center
         $0.numberOfLines = 1
@@ -168,7 +168,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     func setLoginButton(isEnabled: Bool) {
         if isEnabled {
             loginButton.isEnabled = true
-            loginButton.backgroundColor = UIColor.red1
+            loginButton.backgroundColor = .tvingRed
             loginButton.layer.borderWidth = 0
             loginButton.setTitleColor(UIColor.white, for: .normal)
         } else {

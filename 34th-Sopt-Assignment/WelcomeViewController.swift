@@ -33,7 +33,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     private lazy var mainButton = UIButton().then {
-        $0.backgroundColor = UIColor(resource: .red1)
+        $0.backgroundColor = UIColor(resource: .tvingRed)
         $0.layer.cornerRadius = 3
         $0.layer.masksToBounds = true
         $0.setTitle("메인으로", for: .normal)

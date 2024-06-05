@@ -26,7 +26,7 @@ final class SearchViewController: UIViewController {
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(resource: .gray4)
         
-        $0.setPlaceholder(placeholder: "찾고 싶은 영화를 검색하세요.", fontColor: UIColor(resource: .gray2))
+        //$0.setPlaceholder(placeholder: "찾고 싶은 영화를 검색하세요.", fontColor: UIColor(resource: .gray2))
         $0.font = UIFont(name: "Pretendard-Medium", size: 14)
         $0.textColor = .white
     }

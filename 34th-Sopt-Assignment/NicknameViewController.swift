@@ -55,7 +55,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(resource: .gray1)
         
-        $0.setPlaceholder(placeholder: "한글로 입력", fontColor: UIColor(resource: .gray2))
+        //$0.setPlaceholder(placeholder: "한글로 입력", fontColor: UIColor(resource: .gray2))
         $0.textColor = UIColor(resource: .gray4)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         
@@ -65,7 +65,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var koreanOnlyLabel = UILabel().then {
         $0.text = "올바른 닉네임을 입력해주세요."
-        $0.textColor = .red1
+        $0.textColor = .tvingRed
         $0.textAlignment = .center
         $0.numberOfLines = 1
         $0.font = UIFont(name: "Pretendard-Medium", size: 14)
@@ -86,7 +86,7 @@ final class NicknameViewController: UIViewController, UITextFieldDelegate {
     func setSaveButton(nickname: String, isEnabled: Bool) {
         if isEnabled {
             let isValid = nickname.range(of: "^[ㄱ-ㅎㅏ-ㅣ가-힣]*$", options: .regularExpression) != nil
-            saveButton.backgroundColor = isValid ? UIColor(resource: .red1) : UIColor(resource: .gray2)
+            saveButton.backgroundColor = isValid ? UIColor(resource: .tvingRed) : UIColor(resource: .gray2)
             koreanOnlyLabel.isHidden = isValid ? true : false
         } else {
             saveButton.backgroundColor = UIColor(resource: .gray2)
