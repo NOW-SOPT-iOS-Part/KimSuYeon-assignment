@@ -15,7 +15,7 @@ final class SearchViewController: UIViewController {
     
     private let rootView = SearchView()
     
-    private var dailyBoxOfficeModelList: [DailyBoxOfficeList] = []
+    private let viewModel = SearchViewModel()
     
     // MARK: - Life Cycle
 
@@ -23,7 +23,7 @@ final class SearchViewController: UIViewController {
         super.viewWillAppear(false)
         navigationController?.isNavigationBarHidden = true
         
-        requestDailyBoxOfficeList()
+        viewModel.requestDailyBoxOfficeList()
     }
     
     override func loadView() {
@@ -35,8 +35,8 @@ final class SearchViewController: UIViewController {
         
         register()
         setDelegate()
-        
         setTarget()
+        bindViewModel()
     }
     
     // MARK: - TableView Setting
@@ -53,6 +53,16 @@ final class SearchViewController: UIViewController {
         rootView.tableView.dataSource = self
     }
     
+    // MARK: - Data Binding
+    
+    private func bindViewModel() {
+        viewModel.reloadTableViewClosure = { [weak self] in
+            DispatchQueue.main.async {
+                self?.rootView.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Action
     
     private func setTarget() {
@@ -62,40 +72,6 @@ final class SearchViewController: UIViewController {
     @objc
     private func backButtonDidTap(){
         navigationController?.popViewController(animated: false)
-    }
-}
-
-private extension SearchViewController {
-    func requestDailyBoxOfficeList() {
-        var date = ""
-        
-        let format = DateFormatter()
-        format.dateFormat = "yyyyMMdd"
-        
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        if let yesterday {
-            date = format.string(from: yesterday)
-        }
-        
-        BoxOfficeService.shared.dailyBoxOfficeList(date: date) {
-            [weak self] response in switch response {
-            case .success(let data):
-                guard let data = data as? BoxOfficeResponseModel else {
-                    return }
-            self?.dailyBoxOfficeModelList = data.boxOfficeResult.dailyBoxOfficeList
-            self?.rootView.tableView.reloadData()
-            case .requestErr:
-                print("요청 오류 입니다")
-            case .decodedErr:
-                print("디코딩 오류 입니다")
-            case .pathErr:
-                print("경로 오류 입니다")
-            case .serverErr:
-                print("서버 오류입니다")
-            case .networkFail:
-                print("네트워크 오류입니다")
-            }
-        }
     }
 }
 
@@ -111,14 +87,14 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dailyBoxOfficeModelList.count
+        return viewModel.dailyBoxOfficeModelList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: BoxOfficeViewCell.identifier, for: indexPath
         ) as? BoxOfficeViewCell else { return UITableViewCell() }
-        cell.dataBind(dailyBoxOfficeModelList[indexPath.row])
+        cell.dataBind(viewModel.dailyBoxOfficeModelList[indexPath.row])
         return cell
     }
 }

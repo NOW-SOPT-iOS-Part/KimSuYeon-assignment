@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
         bindViewModel()
     }
     
-    // MARK: - Functions
+    // MARK: - Data Binding
     
     private func bindViewModel() {
         viewModel.isValid = { [weak self] isValid in
@@ -45,6 +45,8 @@ final class LoginViewController: UIViewController {
 //            }
 //        }
     }
+    
+    // MARK: - Action
     
     private func setTarget() {
         rootView.idTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)

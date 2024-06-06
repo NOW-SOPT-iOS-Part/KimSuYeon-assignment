@@ -80,7 +80,7 @@ private extension BoxOfficeViewCell {
     }
 }
 
-// MARK: - Data Bind
+// MARK: - Data Binding
 
 extension BoxOfficeViewCell {
     func dataBind (_ boxOfficeData: DailyBoxOfficeList) {
