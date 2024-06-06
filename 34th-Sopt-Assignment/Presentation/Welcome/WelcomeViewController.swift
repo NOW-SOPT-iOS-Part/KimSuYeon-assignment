@@ -29,25 +29,19 @@ final class WelcomeViewController: UIViewController {
         bindID()
         setTarget()
     }
-}
-
-// MARK: - Data Binding
-
-private extension WelcomeViewController {
-    private func bindID() {
+    
+    // MARK: - Functions
+    
+    func bindID() {
         guard let idText = id else { return }
         rootView.welcomeLabel.text = "\(idText)님 \n반가워요!"
     }
-}
-
-// MARK: - Action
-
-private extension WelcomeViewController {
+    
     func setTarget() {
         rootView.mainButton.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
     }
     
-    private func pushToMainVC() {
+    func pushToMainVC() {
         let mainViewController = MainViewController()
         self.navigationController?.pushViewController(mainViewController, animated: true)
     }

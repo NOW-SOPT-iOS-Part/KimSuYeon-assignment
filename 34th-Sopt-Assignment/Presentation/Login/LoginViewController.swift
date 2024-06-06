@@ -29,12 +29,10 @@ final class LoginViewController: UIViewController {
         setTarget()
         bindViewModel()
     }
-}
-
-// MARK: - Data Binding
-
-private extension LoginViewController {
-    func bindViewModel() {
+    
+    // MARK: - Functions
+    
+    private func bindViewModel() {
         viewModel.isValid = { [weak self] isValid in
             if isValid {
                 self?.setLoginButton()
@@ -46,12 +44,8 @@ private extension LoginViewController {
 //            }
 //        }
     }
-}
-
-// MARK: - Action
-
-private extension LoginViewController {
-    func setTarget() {
+    
+    private func setTarget() {
         rootView.idTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         rootView.pwTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
@@ -61,14 +55,14 @@ private extension LoginViewController {
         rootView.loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
     }
     
-    func setLoginButton() {
+    private func setLoginButton() {
         rootView.loginButton.isEnabled = true
         rootView.loginButton.backgroundColor = .tvingRed
         rootView.loginButton.layer.borderWidth = 0
         rootView.loginButton.setTitleColor(.white, for: .normal)
     }
     
-    func pushToWelcomeVC() {
+    private func pushToWelcomeVC() {
         let welcomeViewController = WelcomeViewController()
         welcomeViewController.id = rootView.idTextField.text
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
@@ -80,23 +74,23 @@ private extension LoginViewController {
     }
     
     @objc
-    func idClearButtonDidTap(_ sender: UIButton) {
+    private func idClearButtonDidTap(_ sender: UIButton) {
         rootView.idTextField.text = ""
     }
     
     @objc
-    func pwClearButtonDidTap(_ sender: UIButton) {
+    private func pwClearButtonDidTap(_ sender: UIButton) {
         rootView.pwTextField.text = ""
     }
     
     @objc
-    func pwEyeButtonDidTap(_ sender: UIButton) {
+    private func pwEyeButtonDidTap(_ sender: UIButton) {
         rootView.pwTextField.isSecureTextEntry.toggle()
         rootView.pwEyeButton.setImage(rootView.pwTextField.isSecureTextEntry ? .hiddenEye : .shownEye, for: .normal)
     }
     
     @objc
-    func loginButtonDidTap(){
+    private func loginButtonDidTap(){
         pushToWelcomeVC()
     }
 }
