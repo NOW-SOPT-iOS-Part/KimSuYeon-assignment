@@ -25,7 +25,6 @@ final class BoxOfficeViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .black
         
         setUI()
         setViewHierarchy()
@@ -42,6 +41,9 @@ final class BoxOfficeViewCell: UITableViewCell {
 
 private extension BoxOfficeViewCell {
     func setUI() {
+        self.do {
+            $0.backgroundColor = .black
+        }
         rankLabel.do {
             $0.textColor = .white
             $0.font = UIFont(name: "Pretendard-Medium", size: 12)
