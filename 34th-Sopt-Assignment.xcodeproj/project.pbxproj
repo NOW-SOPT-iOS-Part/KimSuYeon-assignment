@@ -208,6 +208,7 @@
 			children = (
 				A36FF6E52C10C6B4004BF480 /* Login */,
 				A36FF6E72C10C6D9004BF480 /* Welcome */,
+				A347F0772BE074230086DDB1 /* Main */,
 				A36FD6742C1237F40034D100 /* Search */,
 			);
 			path = Presentation;
@@ -250,7 +251,6 @@
 				A3B3752A2BD0212200AA87E5 /* LoginViewController_MVC.swift */,
 				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */,
 				A317C5B12BD1A56500FBCC33 /* NicknameViewController.swift */,
-				A347F0772BE074230086DDB1 /* Main */,
 			);
 			path = "34th-Sopt-Assignment";
 			sourceTree = "<group>";

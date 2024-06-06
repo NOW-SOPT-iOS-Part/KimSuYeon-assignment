@@ -27,6 +27,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setTarget()
+        setTextFieldDelegate()
         bindViewModel()
     }
     
@@ -53,6 +54,11 @@ final class LoginViewController: UIViewController {
         rootView.pwClearButton.addTarget(self, action: #selector(pwClearButtonDidTap), for: .touchUpInside)
         rootView.pwEyeButton.addTarget(self, action: #selector(pwEyeButtonDidTap), for: .touchUpInside)
         rootView.loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func setTextFieldDelegate() {
+        rootView.idTextField.delegate = self
+        rootView.pwTextField.delegate = self
     }
     
     private func setLoginButton() {
@@ -92,5 +98,17 @@ final class LoginViewController: UIViewController {
     @objc
     private func loginButtonDidTap(){
         pushToWelcomeVC()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.setLayer(borderWidth: 1, borderColor: .gray2, cornerRadius: 3)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
     }
 }
