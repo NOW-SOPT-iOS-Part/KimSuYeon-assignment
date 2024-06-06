@@ -19,6 +19,11 @@ final class WelcomeViewController: UIViewController {
     
     // MARK: - LifeCycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     override func loadView() {
         self.view = rootView
     }
