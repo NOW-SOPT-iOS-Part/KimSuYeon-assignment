@@ -15,6 +15,17 @@
 		A347F0822BE0E1220086DDB1 /* RecommendContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0812BE0E1220086DDB1 /* RecommendContentViewController.swift */; };
 		A347F0842BE0E17E0086DDB1 /* RecommendContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0832BE0E17E0086DDB1 /* RecommendContentViewCell.swift */; };
 		A347F0862BE0E1B90086DDB1 /* RecommendContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0852BE0E1B90086DDB1 /* RecommendContentModel.swift */; };
+		A36FD6762C12381A0034D100 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FD6752C12381A0034D100 /* SearchView.swift */; };
+		A36FD6782C123B350034D100 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FD6772C123B350034D100 /* SearchViewController.swift */; };
+		A36FD6952C123D230034D100 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD68C2C123D230034D100 /* Pretendard-Black.otf */; };
+		A36FD6962C123D230034D100 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD68D2C123D230034D100 /* Pretendard-ExtraBold.otf */; };
+		A36FD6972C123D230034D100 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD68E2C123D230034D100 /* Pretendard-ExtraLight.otf */; };
+		A36FD6982C123D230034D100 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD68F2C123D230034D100 /* Pretendard-SemiBold.otf */; };
+		A36FD6992C123D230034D100 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD6902C123D230034D100 /* Pretendard-Thin.otf */; };
+		A36FD69A2C123D230034D100 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD6912C123D230034D100 /* Pretendard-Medium.otf */; };
+		A36FD69B2C123D230034D100 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD6922C123D230034D100 /* Pretendard-Light.otf */; };
+		A36FD69C2C123D230034D100 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD6932C123D230034D100 /* Pretendard-Regular.otf */; };
+		A36FD69D2C123D230034D100 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36FD6942C123D230034D100 /* Pretendard-Bold.otf */; };
 		A36FF6EB2C10C748004BF480 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6EA2C10C748004BF480 /* LoginView.swift */; };
 		A36FF6ED2C10C75A004BF480 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6EC2C10C75A004BF480 /* LoginViewModel.swift */; };
 		A36FF6F12C10C902004BF480 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FF6F02C10C902004BF480 /* LoginViewController.swift */; };
@@ -33,7 +44,6 @@
 		A3B375322BD023D500AA87E5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A3B375312BD023D500AA87E5 /* SnapKit-Dynamic */; };
 		A3B375662BD068BD00AA87E5 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375652BD068BD00AA87E5 /* UILabel+.swift */; };
 		A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B375672BD156E600AA87E5 /* UITextField+.swift */; };
-		A3C4D8232BEC9AD800647B50 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D8222BEC9AD800647B50 /* SearchViewController.swift */; };
 		A3C4D82A2BECCDDB00647B50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A3C4D8292BECCDDB00647B50 /* Moya */; };
 		A3C4D82E2BECD40B00647B50 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D82D2BECD40B00647B50 /* Config.swift */; };
 		A3C4D8302BECDE8900647B50 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D82F2BECDE8900647B50 /* NetworkResult.swift */; };
@@ -42,18 +52,8 @@
 		A3C4D83B2BED158B00647B50 /* BoxOfficeTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D83A2BED158B00647B50 /* BoxOfficeTargetType.swift */; };
 		A3C4D83D2BED22E400647B50 /* BoxOfficeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D83C2BED22E400647B50 /* BoxOfficeService.swift */; };
 		A3C4D83F2BED395800647B50 /* BoxOfficeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */; };
-		A3C4D8412BED396A00647B50 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D8402BED396A00647B50 /* BoxOfficeViewController.swift */; };
 		A3CDA1CE2BD8204000851A0F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3CDA1CD2BD8204000851A0F /* Then */; };
 		A3CDA2002BD95E4700851A0F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA1FF2BD95E4700851A0F /* MainViewController.swift */; };
-		A3CDA20C2BD981BD00851A0F /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2032BD981BC00851A0F /* Pretendard-ExtraLight.otf */; };
-		A3CDA20D2BD981BD00851A0F /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2042BD981BC00851A0F /* Pretendard-SemiBold.otf */; };
-		A3CDA20E2BD981BD00851A0F /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2052BD981BC00851A0F /* Pretendard-ExtraBold.otf */; };
-		A3CDA20F2BD981BD00851A0F /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2062BD981BC00851A0F /* Pretendard-Black.otf */; };
-		A3CDA2102BD981BD00851A0F /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2072BD981BC00851A0F /* Pretendard-Thin.otf */; };
-		A3CDA2112BD981BD00851A0F /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2082BD981BD00851A0F /* Pretendard-Medium.otf */; };
-		A3CDA2122BD981BD00851A0F /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA2092BD981BD00851A0F /* Pretendard-Regular.otf */; };
-		A3CDA2132BD981BD00851A0F /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA20A2BD981BD00851A0F /* Pretendard-Bold.otf */; };
-		A3CDA2142BD981BD00851A0F /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3CDA20B2BD981BD00851A0F /* Pretendard-Light.otf */; };
 		A3CDA21C2BDA888800851A0F /* TivingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21B2BDA888800851A0F /* TivingContentModel.swift */; };
 		A3CDA21E2BDA891600851A0F /* TivingContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21D2BDA891600851A0F /* TivingContentViewCell.swift */; };
 		A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDA21F2BDA8C5600851A0F /* TivingContentViewController.swift */; };
@@ -68,6 +68,17 @@
 		A347F0812BE0E1220086DDB1 /* RecommendContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentViewController.swift; sourceTree = "<group>"; };
 		A347F0832BE0E17E0086DDB1 /* RecommendContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentViewCell.swift; sourceTree = "<group>"; };
 		A347F0852BE0E1B90086DDB1 /* RecommendContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentModel.swift; sourceTree = "<group>"; };
+		A36FD6752C12381A0034D100 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A36FD6772C123B350034D100 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A36FD68C2C123D230034D100 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Black.otf"; sourceTree = "<group>"; };
+		A36FD68D2C123D230034D100 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		A36FD68E2C123D230034D100 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraLight.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		A36FD68F2C123D230034D100 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		A36FD6902C123D230034D100 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Thin.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		A36FD6912C123D230034D100 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		A36FD6922C123D230034D100 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Light.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Light.otf"; sourceTree = "<group>"; };
+		A36FD6932C123D230034D100 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		A36FD6942C123D230034D100 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../things/font/Pretendard/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		A36FF6EA2C10C748004BF480 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A36FF6EC2C10C75A004BF480 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A36FF6F02C10C902004BF480 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +97,6 @@
 		A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController_MVC.swift; sourceTree = "<group>"; };
 		A3B375652BD068BD00AA87E5 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		A3B375672BD156E600AA87E5 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		A3C4D8222BEC9AD800647B50 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A3C4D82D2BECD40B00647B50 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A3C4D82F2BECDE8900647B50 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		A3C4D8312BECDEB800647B50 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
@@ -94,17 +104,7 @@
 		A3C4D83A2BED158B00647B50 /* BoxOfficeTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTargetType.swift; sourceTree = "<group>"; };
 		A3C4D83C2BED22E400647B50 /* BoxOfficeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeService.swift; sourceTree = "<group>"; };
 		A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewCell.swift; sourceTree = "<group>"; };
-		A3C4D8402BED396A00647B50 /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		A3CDA1FF2BD95E4700851A0F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A3CDA2032BD981BC00851A0F /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-ExtraLight.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
-		A3CDA2042BD981BC00851A0F /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-SemiBold.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		A3CDA2052BD981BC00851A0F /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-ExtraBold.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
-		A3CDA2062BD981BC00851A0F /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Black.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Black.otf"; sourceTree = "<group>"; };
-		A3CDA2072BD981BC00851A0F /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Thin.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Thin.otf"; sourceTree = "<group>"; };
-		A3CDA2082BD981BD00851A0F /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Medium.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		A3CDA2092BD981BD00851A0F /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Regular.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
-		A3CDA20A2BD981BD00851A0F /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Bold.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
-		A3CDA20B2BD981BD00851A0F /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Pretendard-Light.otf"; path = "../../../../../../things/font/Pretendard/public/static/Pretendard-Light.otf"; sourceTree = "<group>"; };
 		A3CDA21B2BDA888800851A0F /* TivingContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentModel.swift; sourceTree = "<group>"; };
 		A3CDA21D2BDA891600851A0F /* TivingContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentViewCell.swift; sourceTree = "<group>"; };
 		A3CDA21F2BDA8C5600851A0F /* TivingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivingContentViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +166,33 @@
 			path = ViewCell;
 			sourceTree = "<group>";
 		};
+		A36FD6742C1237F40034D100 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A36FD6752C12381A0034D100 /* SearchView.swift */,
+				A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */,
+				A36FD6772C123B350034D100 /* SearchViewController.swift */,
+				A3C4D8342BECE51000647B50 /* BoxOfficeResponseModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A36FD68B2C123D190034D100 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A36FD68C2C123D230034D100 /* Pretendard-Black.otf */,
+				A36FD6942C123D230034D100 /* Pretendard-Bold.otf */,
+				A36FD68D2C123D230034D100 /* Pretendard-ExtraBold.otf */,
+				A36FD68E2C123D230034D100 /* Pretendard-ExtraLight.otf */,
+				A36FD6922C123D230034D100 /* Pretendard-Light.otf */,
+				A36FD6912C123D230034D100 /* Pretendard-Medium.otf */,
+				A36FD6932C123D230034D100 /* Pretendard-Regular.otf */,
+				A36FD68F2C123D230034D100 /* Pretendard-SemiBold.otf */,
+				A36FD6902C123D230034D100 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A36FF6E52C10C6B4004BF480 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +208,7 @@
 			children = (
 				A36FF6E52C10C6B4004BF480 /* Login */,
 				A36FF6E72C10C6D9004BF480 /* Welcome */,
-				A36FF6E92C10C70E004BF480 /* Home */,
+				A36FD6742C1237F40034D100 /* Search */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -193,13 +220,6 @@
 				A36FF6F82C11020E004BF480 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
-			sourceTree = "<group>";
-		};
-		A36FF6E92C10C70E004BF480 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		A3B3750A2BD01C1300AA87E5 = {
@@ -231,25 +251,8 @@
 				A3B3752C2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift */,
 				A317C5B12BD1A56500FBCC33 /* NicknameViewController.swift */,
 				A347F0772BE074230086DDB1 /* Main */,
-				A3C4D81F2BEC9A9900647B50 /* Search */,
 			);
 			path = "34th-Sopt-Assignment";
-			sourceTree = "<group>";
-		};
-		A3B375332BD0487400AA87E5 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A3CDA2062BD981BC00851A0F /* Pretendard-Black.otf */,
-				A3CDA20A2BD981BD00851A0F /* Pretendard-Bold.otf */,
-				A3CDA2052BD981BC00851A0F /* Pretendard-ExtraBold.otf */,
-				A3CDA2032BD981BC00851A0F /* Pretendard-ExtraLight.otf */,
-				A3CDA20B2BD981BD00851A0F /* Pretendard-Light.otf */,
-				A3CDA2082BD981BD00851A0F /* Pretendard-Medium.otf */,
-				A3CDA2092BD981BD00851A0F /* Pretendard-Regular.otf */,
-				A3CDA2042BD981BC00851A0F /* Pretendard-SemiBold.otf */,
-				A3CDA2072BD981BC00851A0F /* Pretendard-Thin.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A3B375642BD068A900AA87E5 /* Extension */ = {
@@ -261,17 +264,6 @@
 				A317C5B32BD1C8F500FBCC33 /* UIView+.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		A3C4D81F2BEC9A9900647B50 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				A3C4D8222BEC9AD800647B50 /* SearchViewController.swift */,
-				A3C4D8342BECE51000647B50 /* BoxOfficeResponseModel.swift */,
-				A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */,
-				A3C4D8402BED396A00647B50 /* BoxOfficeViewController.swift */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		A3C4D8332BECDF2200647B50 /* Network */ = {
@@ -289,7 +281,7 @@
 		A3CDA1D12BD8E01D00851A0F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A3B375332BD0487400AA87E5 /* Fonts */,
+				A36FD68B2C123D190034D100 /* Fonts */,
 				A3B3751F2BD01C1600AA87E5 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -376,18 +368,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3CDA2132BD981BD00851A0F /* Pretendard-Bold.otf in Resources */,
+				A36FD6972C123D230034D100 /* Pretendard-ExtraLight.otf in Resources */,
+				A36FD69D2C123D230034D100 /* Pretendard-Bold.otf in Resources */,
 				A3B375202BD01C1600AA87E5 /* Assets.xcassets in Resources */,
+				A36FD6982C123D230034D100 /* Pretendard-SemiBold.otf in Resources */,
+				A36FD69B2C123D230034D100 /* Pretendard-Light.otf in Resources */,
+				A36FD6992C123D230034D100 /* Pretendard-Thin.otf in Resources */,
 				A3B375232BD01C1600AA87E5 /* Base in Resources */,
-				A3CDA20E2BD981BD00851A0F /* Pretendard-ExtraBold.otf in Resources */,
-				A3CDA2102BD981BD00851A0F /* Pretendard-Thin.otf in Resources */,
-				A3CDA2142BD981BD00851A0F /* Pretendard-Light.otf in Resources */,
-				A3CDA20D2BD981BD00851A0F /* Pretendard-SemiBold.otf in Resources */,
-				A3CDA20C2BD981BD00851A0F /* Pretendard-ExtraLight.otf in Resources */,
-				A3CDA20F2BD981BD00851A0F /* Pretendard-Black.otf in Resources */,
-				A3CDA2122BD981BD00851A0F /* Pretendard-Regular.otf in Resources */,
+				A36FD6962C123D230034D100 /* Pretendard-ExtraBold.otf in Resources */,
+				A36FD6952C123D230034D100 /* Pretendard-Black.otf in Resources */,
+				A36FD69C2C123D230034D100 /* Pretendard-Regular.otf in Resources */,
 				A3B3751E2BD01C1300AA87E5 /* Base in Resources */,
-				A3CDA2112BD981BD00851A0F /* Pretendard-Medium.otf in Resources */,
+				A36FD69A2C123D230034D100 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,9 +397,9 @@
 				A3B3752B2BD0212200AA87E5 /* LoginViewController_MVC.swift in Sources */,
 				A36FF6F92C11020E004BF480 /* WelcomeViewController.swift in Sources */,
 				A3B375682BD156E600AA87E5 /* UITextField+.swift in Sources */,
-				A3C4D8412BED396A00647B50 /* BoxOfficeViewController.swift in Sources */,
 				A347F07D2BE0D5FE0086DDB1 /* LiveContentViewController.swift in Sources */,
 				A36FF6ED2C10C75A004BF480 /* LoginViewModel.swift in Sources */,
+				A36FD6762C12381A0034D100 /* SearchView.swift in Sources */,
 				A3C4D83F2BED395800647B50 /* BoxOfficeViewCell.swift in Sources */,
 				A3B3752D2BD0213E00AA87E5 /* WelcomeViewController_MVC.swift in Sources */,
 				A317C5B22BD1A56500FBCC33 /* NicknameViewController.swift in Sources */,
@@ -423,10 +415,10 @@
 				A3C4D83B2BED158B00647B50 /* BoxOfficeTargetType.swift in Sources */,
 				A3C4D8302BECDE8900647B50 /* NetworkResult.swift in Sources */,
 				A347F0862BE0E1B90086DDB1 /* RecommendContentModel.swift in Sources */,
-				A3C4D8232BEC9AD800647B50 /* SearchViewController.swift in Sources */,
 				A347F07B2BE0D5EE0086DDB1 /* LiveContentViewCell.swift in Sources */,
 				A3B375192BD01C1300AA87E5 /* SceneDelegate.swift in Sources */,
 				A3C4D82E2BECD40B00647B50 /* Config.swift in Sources */,
+				A36FD6782C123B350034D100 /* SearchViewController.swift in Sources */,
 				A36FF6F72C110200004BF480 /* WelcomeView.swift in Sources */,
 				A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */,
 				A3CDA2002BD95E4700851A0F /* MainViewController.swift in Sources */,
