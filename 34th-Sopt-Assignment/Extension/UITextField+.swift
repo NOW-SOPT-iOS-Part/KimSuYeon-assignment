@@ -9,6 +9,20 @@ import Foundation
 import UIKit
 
 extension UITextField {
+    func setText(placeholder: String, textColor: UIColor, backgroundColor: UIColor, placeholderColor: UIColor) {
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+        attributedPlaceholder = NSAttributedString(
+            string: placeholder, attributes: [.foregroundColor: placeholderColor]
+        )
+    }
+    
+    func setLayer(borderWidth: CGFloat = 0, borderColor: UIColor, cornerRadius: CGFloat) {
+        layer.borderColor = borderColor.cgColor
+        layer.cornerRadius = cornerRadius
+        layer.borderWidth = borderWidth
+    }
+    
     func addPadding(left: CGFloat? = nil, right: CGFloat? = nil) {
         if let left {
             leftView = UIView(frame: CGRect(x: 0, y: 0, width: left, height: 0))
@@ -18,10 +32,5 @@ extension UITextField {
             rightView = UIView(frame: CGRect(x: 0, y: 0, width: right, height: 0))
             rightViewMode = .always
         }
-    }
-    
-    //placeholder 세팅 커스텀
-    func setPlaceholder(placeholder: String, fontColor: UIColor?) {
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: fontColor!])
     }
 }

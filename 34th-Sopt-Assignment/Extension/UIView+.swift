@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 extension UIView {
+    convenience init(backgroundColor: UIColor) {
+        self.init(frame: .zero)
+        self.backgroundColor = backgroundColor
+    }
+    
     func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
@@ -18,7 +23,6 @@ extension UIView {
     func addSubviews(_ views: UIView...) {
         views.forEach {
             self.addSubview($0)
-            //$0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 }
