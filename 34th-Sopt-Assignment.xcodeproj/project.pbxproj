@@ -141,9 +141,9 @@
 		A3000E7A2C12490400E19EE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A3000E7F2C12D73700E19EE0 /* ViewCell */,
 				A36FD6752C12381A0034D100 /* SearchView.swift */,
 				A36FD6772C123B350034D100 /* SearchViewController.swift */,
-				A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +162,14 @@
 				A3C4D8342BECE51000647B50 /* BoxOfficeResponseModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A3000E7F2C12D73700E19EE0 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */,
+			);
+			path = ViewCell;
 			sourceTree = "<group>";
 		};
 		A347F0772BE074230086DDB1 /* Main */ = {
