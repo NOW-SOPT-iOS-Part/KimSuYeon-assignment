@@ -22,8 +22,6 @@ final class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         navigationController?.isNavigationBarHidden = true
-        
-        viewModel.requestDailyBoxOfficeList()
     }
     
     override func loadView() {
@@ -37,6 +35,8 @@ final class SearchViewController: UIViewController {
         setDelegate()
         setTarget()
         bindViewModel()
+        
+        viewModel.requestDailyBoxOfficeList()
     }
     
     // MARK: - TableView Setting
@@ -56,7 +56,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Data Binding
     
     private func bindViewModel() {
-        viewModel.reloadTableViewClosure = { [weak self] in
+        viewModel.dailyBoxOfficeModelList.bind { [weak self] _ in
             DispatchQueue.main.async {
                 self?.rootView.tableView.reloadData()
             }
@@ -87,14 +87,16 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dailyBoxOfficeModelList.count
+        return viewModel.dailyBoxOfficeModelList.value?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: BoxOfficeViewCell.identifier, for: indexPath
         ) as? BoxOfficeViewCell else { return UITableViewCell() }
-        cell.dataBind(viewModel.dailyBoxOfficeModelList[indexPath.row])
+        if let data = viewModel.dailyBoxOfficeModelList.value?[indexPath.row] {
+            cell.dataBind(data)
+        }
         return cell
     }
 }

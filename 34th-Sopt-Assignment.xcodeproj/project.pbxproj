@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A3000E7E2C12497400E19EE0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3000E7D2C12497300E19EE0 /* SearchViewModel.swift */; };
 		A317C5B42BD1C8F500FBCC33 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317C5B32BD1C8F500FBCC33 /* UIView+.swift */; };
+		A343A4182C3530160057DEDF /* ObservablePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A343A4172C3530160057DEDF /* ObservablePattern.swift */; };
 		A347F0792BE0D5E20086DDB1 /* LiveContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */; };
 		A347F07B2BE0D5EE0086DDB1 /* LiveContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */; };
 		A347F07D2BE0D5FE0086DDB1 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		A3000E7D2C12497300E19EE0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		A317C5B32BD1C8F500FBCC33 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A343A4172C3530160057DEDF /* ObservablePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservablePattern.swift; sourceTree = "<group>"; };
 		A347F0782BE0D5E20086DDB1 /* LiveContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentModel.swift; sourceTree = "<group>"; };
 		A347F07A2BE0D5EE0086DDB1 /* LiveContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewCell.swift; sourceTree = "<group>"; };
 		A347F07C2BE0D5FE0086DDB1 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 				A3C4D83E2BED395700647B50 /* BoxOfficeViewCell.swift */,
 			);
 			path = ViewCell;
+			sourceTree = "<group>";
+		};
+		A343A4192C353B430057DEDF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A343A4172C3530160057DEDF /* ObservablePattern.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		A347F0772BE074230086DDB1 /* Main */ = {
@@ -290,6 +300,7 @@
 				A3B375242BD01C1600AA87E5 /* Info.plist */,
 				A3CDA1D22BD8E04E00851A0F /* App */,
 				A3CDA1D12BD8E01D00851A0F /* Resource */,
+				A343A4192C353B430057DEDF /* Util */,
 				A3B375642BD068A900AA87E5 /* Extension */,
 				A3C4D8332BECDF2200647B50 /* Network */,
 				A36FF6E62C10C6CA004BF480 /* Presentation */,
@@ -460,6 +471,7 @@
 				A3C4D82E2BECD40B00647B50 /* Config.swift in Sources */,
 				A36FD6782C123B350034D100 /* SearchViewController.swift in Sources */,
 				A36FF6F72C110200004BF480 /* WelcomeView.swift in Sources */,
+				A343A4182C3530160057DEDF /* ObservablePattern.swift in Sources */,
 				A3CDA2202BDA8C5600851A0F /* TivingContentViewController.swift in Sources */,
 				A3CDA2002BD95E4700851A0F /* MainViewController.swift in Sources */,
 				A3CDA21E2BDA891600851A0F /* TivingContentViewCell.swift in Sources */,

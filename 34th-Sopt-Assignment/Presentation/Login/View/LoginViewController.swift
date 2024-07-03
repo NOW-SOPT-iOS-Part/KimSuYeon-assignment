@@ -34,15 +34,16 @@ final class LoginViewController: UIViewController {
     // MARK: - Data Binding
     
     private func bindViewModel() {
-        viewModel.isValid = { [weak self] isValid in
+        viewModel.isValid.bind { [weak self] isValid in
+            guard let isValid else { return }
             if isValid {
                 self?.setLoginButton()
             }
         }
-//        viewModel.errMessage = { [weak self] err in
-//            if let err = err {
-//                self?.showToast(err)
-//            }
+        
+//        viewModel.errMessage.bind { [weak self] err in
+//            guard let err else { return }
+//            self?.showToast(err)
 //        }
     }
     
