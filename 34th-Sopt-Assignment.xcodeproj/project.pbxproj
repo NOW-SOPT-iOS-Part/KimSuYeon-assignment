@@ -174,6 +174,14 @@
 			path = ViewCell;
 			sourceTree = "<group>";
 		};
+		A343A4192C353B430057DEDF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A343A4172C3530160057DEDF /* ObservablePattern.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		A347F0772BE074230086DDB1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +252,6 @@
 		A36FF6E52C10C6B4004BF480 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A343A4172C3530160057DEDF /* ObservablePattern.swift */,
 				A3000E772C1248CE00E19EE0 /* View */,
 				A3000E782C1248D400E19EE0 /* ViewModel */,
 			);
@@ -293,6 +300,7 @@
 				A3B375242BD01C1600AA87E5 /* Info.plist */,
 				A3CDA1D22BD8E04E00851A0F /* App */,
 				A3CDA1D12BD8E01D00851A0F /* Resource */,
+				A343A4192C353B430057DEDF /* Util */,
 				A3B375642BD068A900AA87E5 /* Extension */,
 				A3C4D8332BECDF2200647B50 /* Network */,
 				A36FF6E62C10C6CA004BF480 /* Presentation */,

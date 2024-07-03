@@ -11,13 +11,7 @@ final class SearchViewModel {
     
     // MARK: - Properties
     
-    var dailyBoxOfficeModelList: [DailyBoxOfficeList] = [] {
-        didSet {
-            self.reloadTableViewClosure?()
-        }
-    }
-    
-    var reloadTableViewClosure: (() -> Void)?
+    var dailyBoxOfficeModelList: ObservablePattern<[DailyBoxOfficeList]> = ObservablePattern([])
     
     // MARK: - Network
     
@@ -38,7 +32,7 @@ final class SearchViewModel {
                 guard let data = data as? BoxOfficeResponseModel else {
                     return
                 }
-                self?.dailyBoxOfficeModelList = data.boxOfficeResult.dailyBoxOfficeList
+                self?.dailyBoxOfficeModelList.value = data.boxOfficeResult.dailyBoxOfficeList
             case .requestErr:
                 print("요청 오류 입니다")
             case .decodedErr:
