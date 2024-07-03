@@ -11,54 +11,70 @@ import Then
 
 final class BoxOfficeViewCell: UITableViewCell {
     
+    // MARK: - UI Component
+    
     static let identifier = "BoxOfficeViewCell"
-
-    private let rankLabel = UILabel().then {
-        $0.textColor = .white
-        $0.textAlignment = .center
-        $0.numberOfLines = 1
-        $0.font = UIFont(name: "Pretendard-Medium", size: 12)
-    }
     
-    private let movieNameLabel = UILabel().then {
-        $0.textColor = .white
-        $0.textAlignment = .center
-        $0.numberOfLines = 1
-        $0.font = UIFont(name: "Pretendard-Medium", size: 12)
-    }
+    private let rankLabel = UILabel()
     
-    private let audienceLabel = UILabel().then {
-        $0.textColor = .white
-        $0.textAlignment = .center
-        $0.numberOfLines = 1
-        $0.font = UIFont(name: "Pretendard-Medium", size: 12)
-    }
+    private let nameLabel = UILabel()
+    
+    private let audienceLabel = UILabel()
+    
+    // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .black
-        contentView.backgroundColor = .black
-        
-        setLayout()
+        setUI()
+        setViewHierarchy()
+        setAutoLayout()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setLayout() {
-        contentView.addSubviews(rankLabel, movieNameLabel, audienceLabel)
+}
+
+// MARK: - UI Setting
+
+private extension BoxOfficeViewCell {
+    func setUI() {
+        self.do {
+            $0.backgroundColor = .black
+        }
+        rankLabel.do {
+            $0.textColor = .white
+            $0.font = UIFont(name: "Pretendard-Medium", size: 12)
+        }
         
+        nameLabel.do {
+            $0.textColor = .white
+            $0.font = UIFont(name: "Pretendard-Medium", size: 12)
+        }
+        
+        audienceLabel.do {
+            $0.textColor = .white
+            $0.font = UIFont(name: "Pretendard-Medium", size: 12)
+        }
+    }
+    
+    func setViewHierarchy() {
+        addSubviews(rankLabel, nameLabel, audienceLabel)
+    }
+    
+    func setAutoLayout() {
         rankLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
             $0.centerY.equalToSuperview()
         }
-        movieNameLabel.snp.makeConstraints {
+        
+        nameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(40)
             $0.centerY.equalToSuperview()
         }
+        
         audienceLabel.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(20)
             $0.centerY.equalToSuperview()
@@ -66,10 +82,12 @@ final class BoxOfficeViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Data Binding
+
 extension BoxOfficeViewCell {
     func dataBind (_ boxOfficeData: DailyBoxOfficeList) {
         rankLabel.text = boxOfficeData.rank
-        movieNameLabel.text = boxOfficeData.movieNm
+        nameLabel.text = boxOfficeData.movieNm
         audienceLabel.text = "\(boxOfficeData.audiCnt)명"
     }
 }
